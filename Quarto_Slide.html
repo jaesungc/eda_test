@@ -1,0 +1,1537 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+<script src="Quarto_Slide_files/libs/clipboard/clipboard.min.js"></script>
+<script src="Quarto_Slide_files/libs/quarto-html/tabby.min.js"></script>
+<script src="Quarto_Slide_files/libs/quarto-html/popper.min.js"></script>
+<script src="Quarto_Slide_files/libs/quarto-html/tippy.umd.min.js"></script>
+<link href="Quarto_Slide_files/libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="Quarto_Slide_files/libs/quarto-html/quarto-html.min.css" rel="stylesheet" data-mode="light">
+<link href="Quarto_Slide_files/libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
+  <meta name="generator" content="quarto-1.0.36">
+
+  <meta name="author" content="연습용">
+  <meta name="dcterms.date" content="2022-11-26">
+  <title>Reproducible Research &amp; Intereactive Presentation</title>
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+  <link rel="stylesheet" href="Quarto_Slide_files/libs/revealjs/dist/reset.css">
+  <link rel="stylesheet" href="Quarto_Slide_files/libs/revealjs/dist/reveal.css">
+  <style>
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    span.underline{text-decoration: underline;}
+    div.column{display: inline-block; vertical-align: top; width: 50%;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+    pre > code.sourceCode { white-space: pre; position: relative; }
+    pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+    pre > code.sourceCode > span:empty { height: 1.2em; }
+    .sourceCode { overflow: visible; }
+    code.sourceCode > span { color: inherit; text-decoration: inherit; }
+    div.sourceCode { margin: 1em 0; }
+    pre.sourceCode { margin: 0; }
+    @media screen {
+    div.sourceCode { overflow: auto; }
+    }
+    @media print {
+    pre > code.sourceCode { white-space: pre-wrap; }
+    pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+    }
+    pre.numberSource code
+      { counter-reset: source-line 0; }
+    pre.numberSource code > span
+      { position: relative; left: -4em; counter-increment: source-line; }
+    pre.numberSource code > span > a:first-child::before
+      { content: counter(source-line);
+        position: relative; left: -1em; text-align: right; vertical-align: baseline;
+        border: none; display: inline-block;
+        -webkit-touch-callout: none; -webkit-user-select: none;
+        -khtml-user-select: none; -moz-user-select: none;
+        -ms-user-select: none; user-select: none;
+        padding: 0 4px; width: 4em;
+        color: #aaaaaa;
+      }
+    pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+    div.sourceCode
+      { color: #003b4f; background-color: #f1f3f5; }
+    @media screen {
+    pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+    }
+    code span { color: #003b4f; } /* Normal */
+    code span.al { color: #ad0000; } /* Alert */
+    code span.an { color: #5e5e5e; } /* Annotation */
+    code span.at { color: #657422; } /* Attribute */
+    code span.bn { color: #ad0000; } /* BaseN */
+    code span.bu { } /* BuiltIn */
+    code span.cf { color: #003b4f; } /* ControlFlow */
+    code span.ch { color: #20794d; } /* Char */
+    code span.cn { color: #8f5902; } /* Constant */
+    code span.co { color: #5e5e5e; } /* Comment */
+    code span.cv { color: #5e5e5e; font-style: italic; } /* CommentVar */
+    code span.do { color: #5e5e5e; font-style: italic; } /* Documentation */
+    code span.dt { color: #ad0000; } /* DataType */
+    code span.dv { color: #ad0000; } /* DecVal */
+    code span.er { color: #ad0000; } /* Error */
+    code span.ex { } /* Extension */
+    code span.fl { color: #ad0000; } /* Float */
+    code span.fu { color: #4758ab; } /* Function */
+    code span.im { color: #00769e; } /* Import */
+    code span.in { color: #5e5e5e; } /* Information */
+    code span.kw { color: #003b4f; } /* Keyword */
+    code span.op { color: #5e5e5e; } /* Operator */
+    code span.ot { color: #003b4f; } /* Other */
+    code span.pp { color: #ad0000; } /* Preprocessor */
+    code span.sc { color: #5e5e5e; } /* SpecialChar */
+    code span.ss { color: #20794d; } /* SpecialString */
+    code span.st { color: #20794d; } /* String */
+    code span.va { color: #111111; } /* Variable */
+    code span.vs { color: #20794d; } /* VerbatimString */
+    code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
+  </style>
+  <link rel="stylesheet" href="Quarto_Slide_files/libs/revealjs/dist/theme/quarto.css" id="theme">
+  <link rel="stylesheet" href="styles.css">
+  <link href="Quarto_Slide_files/libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
+  <link href="Quarto_Slide_files/libs/revealjs/plugin/reveal-menu/menu.css" rel="stylesheet">
+  <link href="Quarto_Slide_files/libs/revealjs/plugin/reveal-menu/quarto-menu.css" rel="stylesheet">
+  <link href="Quarto_Slide_files/libs/revealjs/plugin/reveal-chalkboard/font-awesome/css/all.css" rel="stylesheet">
+  <link href="Quarto_Slide_files/libs/revealjs/plugin/reveal-chalkboard/style.css" rel="stylesheet">
+  <link href="Quarto_Slide_files/libs/revealjs/plugin/quarto-support/footer.css" rel="stylesheet">
+  <style type="text/css">
+
+  .callout {
+    margin-top: 1em;
+    margin-bottom: 1em;  
+    border-radius: .25rem;
+  }
+
+  .callout.callout-style-simple { 
+    padding: 0em 0.5em;
+    border-left: solid #acacac .3rem;
+    border-right: solid 1px silver;
+    border-top: solid 1px silver;
+    border-bottom: solid 1px silver;
+    display: flex;
+  }
+
+  .callout.callout-style-default {
+    border-left: solid #acacac .3rem;
+    border-right: solid 1px silver;
+    border-top: solid 1px silver;
+    border-bottom: solid 1px silver;
+  }
+
+  .callout .callout-body-container {
+    flex-grow: 1;
+  }
+
+  .callout.callout-style-simple .callout-body {
+    font-size: 1rem;
+    font-weight: 400;
+  }
+
+  .callout.callout-style-default .callout-body {
+    font-size: 0.9rem;
+    font-weight: 400;
+  }
+
+  .callout.callout-captioned.callout-style-simple .callout-body {
+    margin-top: 0.2em;
+  }
+
+  .callout:not(.callout-captioned) .callout-body {
+      display: flex;
+  }
+
+  .callout:not(.no-icon).callout-captioned.callout-style-simple .callout-content {
+    padding-left: 1.6em;
+  }
+
+  .callout.callout-captioned .callout-header {
+    padding-top: 0.2em;
+    margin-bottom: -0.2em;
+  }
+
+  .callout.callout-captioned .callout-caption  p {
+    margin-top: 0.5em;
+    margin-bottom: 0.5em;
+  }
+    
+  .callout.callout-captioned.callout-style-simple .callout-content  p {
+    margin-top: 0;
+  }
+
+  .callout.callout-captioned.callout-style-default .callout-content  p {
+    margin-top: 0.7em;
+  }
+
+  .callout.callout-style-simple div.callout-caption {
+    border-bottom: none;
+    font-size: .9rem;
+    font-weight: 600;
+    opacity: 75%;
+  }
+
+  .callout.callout-style-default  div.callout-caption {
+    border-bottom: none;
+    font-weight: 600;
+    opacity: 85%;
+    font-size: 0.9rem;
+    padding-left: 0.5em;
+    padding-right: 0.5em;
+  }
+
+  .callout.callout-style-default div.callout-content {
+    padding-left: 0.5em;
+    padding-right: 0.5em;
+  }
+
+  .callout.callout-style-simple .callout-icon::before {
+    height: 1rem;
+    width: 1rem;
+    display: inline-block;
+    content: "";
+    background-repeat: no-repeat;
+    background-size: 1rem 1rem;
+  }
+
+  .callout.callout-style-default .callout-icon::before {
+    height: 0.9rem;
+    width: 0.9rem;
+    display: inline-block;
+    content: "";
+    background-repeat: no-repeat;
+    background-size: 0.9rem 0.9rem;
+  }
+
+  .callout-caption {
+    display: flex
+  }
+    
+  .callout-icon::before {
+    margin-top: 1rem;
+    padding-right: .5rem;
+  }
+
+  .callout.no-icon::before {
+    display: none !important;
+  }
+
+  .callout.callout-captioned .callout-body > .callout-content > :last-child {
+    margin-bottom: 0.5rem;
+  }
+
+  .callout.callout-captioned .callout-icon::before {
+    margin-top: .5rem;
+    padding-right: .5rem;
+  }
+
+  .callout:not(.callout-captioned) .callout-icon::before {
+    margin-top: 1rem;
+    padding-right: .5rem;
+  }
+
+  /* Callout Types */
+
+  div.callout-note {
+    border-left-color: #4582ec !important;
+  }
+
+  div.callout-note .callout-icon::before {
+    background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAAXNSR0IArs4c6QAAAERlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAA6ABAAMAAAABAAEAAKACAAQAAAABAAAAIKADAAQAAAABAAAAIAAAAACshmLzAAAEU0lEQVRYCcVXTWhcVRQ+586kSUMMxkyaElstCto2SIhitS5Ek8xUKV2poatCcVHtUlFQk8mbaaziwpWgglJwVaquitBOfhQXFlqlzSJpFSpIYyXNjBNiTCck7x2/8/LeNDOZxDuEkgOXe++553zfefee+/OYLOXFk3+1LLrRdiO81yNqZ6K9cG0P3MeFaMIQjXssE8Z1JzLO9ls20MBZX7oG8w9GxB0goaPrW5aNMp1yOZIa7Wv6o2ykpLtmAPs/vrG14Z+6d4jpbSKuhdcSyq9wGMPXjonwmESXrriLzFGOdDBLB8Y6MNYBu0dRokSygMA/mrun8MGFN3behm6VVAwg4WR3i6FvYK1T7MHo9BK7ydH+1uurECoouk5MPRyVSBrBHMYwVobG2aOXM07sWrn5qgB60rc6mcwIDJtQrnrEr44kmy+UO9r0u9O5/YbkS9juQckLed3DyW2XV/qWBBB3ptvI8EUY3I9p/67OW+g967TNr3Sotn3IuVlfMLVnsBwH4fsnebJvyGm5GeIUA3jljERmrv49SizPYuq+z7c2H/jlGC+Ghhupn/hcapqmcudB9jwJ/3jvnvu6vu5lVzF1fXyZuZZ7U8nRmVzytvT+H3kilYvH09mLWrQdwFSsFEsxFVs5fK7A0g8gMZjbif4ACpKbjv7gNGaD8bUrlk8x+KRflttr22JEMRUbTUwwDQScyzPgedQHZT0xnx7ujw2jfVfExwYHwOsDTjLdJ2ebmeQIlJ7neo41s/DrsL3kl+W2lWvAga0tR3zueGr6GL78M3ifH0rGXrBC2aAR8uYcIA5gwV8zIE8onoh8u0Fca/ciF7j1uOzEnqcIm59sEXoGc0+z6+H45V1CvAvHcD7THztu669cnp+L0okAeIc6zjbM/24LgGM1gZk7jnRu1aQWoU9sfUOuhrmtaPIO3YY1KLLWZaEO5TKUbMY5zx8W9UJ6elpLwKXbsaZ4EFl7B4bMtDv0iRipKoDQT2sNQI9b1utXFdYisi+wzZ/ri/1m7QfDgEuvgUUEIJPq3DhX/5DWNqIXDOweC2wvIR90Oq3lDpdMIgD2r0dXvGdsEW5H6x6HLRJYU7C69VefO1x8Gde1ZFSJLfWS1jbCnhtOPxmpfv2LXOA2Xk2tvnwKKPFuZ/oRmwBwqRQDcKNeVQkYcOjtWVBuM/JuYw5b6isojIkYxyYAFn5K7ZBF10fea52y8QltAg6jnMqNHFBmGkQ1j+U43HMi2xMar1Nv0zGsf1s8nUsmUtPOOrbFIR8bHFDMB5zL13Gmr/kGlCkUzedTzzmzsaJXhYawnA3UmARpiYj5ooJZiUoxFRtK3X6pgNPv+IZVPcnwbOl6f+aBaO1CNvPW9n9LmCp01nuSaTRF2YxHqZ8DYQT6WsXT+RD6eUztwYLZ8rM+rcPxamv1VQzFUkzFXvkiVrySGQgJNvXHJAxiU3/NwiC03rSf05VBaPtu/Z7/B8Yn/w7eguloAAAAAElFTkSuQmCC');
+  }
+
+  div.callout-note.callout-style-default .callout-caption {
+    background-color: #dae6fb
+  }
+
+  div.callout-important {
+    border-left-color: #d9534f !important;
+  }
+
+  div.callout-important .callout-icon::before {
+    background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAAXNSR0IArs4c6QAAAERlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAA6ABAAMAAAABAAEAAKACAAQAAAABAAAAIKADAAQAAAABAAAAIAAAAACshmLzAAAEKklEQVRYCcVXTWhcVRS+575MJym48A+hSRFr00ySRQhURRfd2HYjk2SSTokuBCkU2o0LoSKKraKIBTcuFCoidGFD08nkBzdREbpQ1EDNIv8qSGMFUboImMSZd4/f9zJv8ibJMC8xJQfO3HPPPef7zrvvvnvviIkpC9nsw0UttFunbUhpFzFtarSd6WJkStVMw5xyVqYTvkwfzuf/5FgtkVoB0729j1rjXwThS7Vio+Mo6DNnvLfahoZ+i/o32lULuJ3NNiz7q6+pyAUkJaFF6JwaM2lUJlV0MlnQn5aTRbEu0SEqHUa0A4AdiGuB1kFXRfVyg5d87+Dg4DL6m2TLAub60ilj7A1Ec4odSAc8X95sHh7+ZRPCFo6Fnp7HfU/fBng/hi10CjCnWnJjsxvDNxWw0NfV6Rv5GgP3I3jGWXumdTD/3cbEOP2ZbOZp69yniG3FQ9z1jD7bnBu9Fc2tKGC2q+uAJOQHBDRiZX1x36o7fWBs7J9ownbtO+n0/qWkvW7UPIfc37WgT6ZGR++EOJyeQDSb9UB+DZ1G6DdLDzyS+b/kBCYGsYgJbSQHuThGKRcw5xdeQf8YdNHsc6ePXrlSYMBuSIAFTGAtQo+VuALo4BX83N190NWZWbynBjhOHsmNfFWLeL6v+ynsA58zDvvAC8j5PkbOcXCMg2PZFk3q8MjI7WAG/Dp9AwP7jdGBOOQkAvlFUB+irtm16I1Zw9YBcpGTGXYmk3kQIC/Cds55l+iMI3jqhjAuaoe+am2Jw5GT3Nbz3CkE12NavmzN5+erJW7046n/CH1RO/RVa8lBLozXk9uqykkGAyRXLWlLv5jyp4RFsG5vGVzpDLnIjTWgnRy2Rr+tDKvRc7Y8AyZq10jj8DqXdnIRNtFZb+t/ZRtXcDiVnzpqx8mPcDWxgARUqx0W1QB9MeUZiNrV4qP+Ehc+BpNgATsTX8ozYKL2NtFYAHc84fG7ndxUPr+AR/iQSns7uSUufAymwDOb2+NjK27lEFocm/EE2WpyIy/Hi66MWuMKJn8RvxIcj87IM5Vh9663ziW36kR0HNenXuxmfaD8JC7tfKbrhFr7LiZCrMjrzTeGx+PmkosrkNzW94ObzwocJ7A1HokLolY+AvkTiD/q1H0cN48c5EL8Crkttsa/AXQVDmutfyku0E7jShx49XqV3MFK8IryDhYVbj7Sj2P2eBxwcXoe8T8idsKKPRcnZw1b+slFTubwUwhktrfnAt7J++jwQtLZcm3sr9LQrjRzz6cfMv9aLvgmnAGvpoaGLxM4mAEaLV7iAzQ3oU0IvD5x9ix3yF2RAAuYAOO2f7PEFWCXZ4C9Pb2UsgDeVnFSpbFK7/IWu7TPTvBqzbGdCHOJQSxiEjt6IyZmxQyEJHv6xyQsYk//moVFsN2zP6fRImjfq7/n/wFDguUQFNEwugAAAABJRU5ErkJggg==');
+  }
+
+  div.callout-important.callout-style-default .callout-caption {
+    background-color: #f7dddc
+  }
+
+  div.callout-warning {
+    border-left-color: #f0ad4e !important;
+  }
+
+  div.callout-warning .callout-icon::before {
+    background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAAXNSR0IArs4c6QAAAERlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAA6ABAAMAAAABAAEAAKACAAQAAAABAAAAIKADAAQAAAABAAAAIAAAAACshmLzAAAETklEQVRYCeVWW2gcVRg+58yaTUnizqbipZeX4uWhBEniBaoUX1Ioze52t7sRq6APio9V9MEaoWlVsFasRq0gltaAPuxms8lu0gcviE/FFOstVbSIxgcv6SU7EZqmdc7v9+9mJtNks51NTUH84ed889/PP+cmxP+d5FIbMJmNbpREu4WUkiTtCicKny0l1pIKmBzovF2S+hIJHX8iEu3hZJ5lNZGqyRrGSIQpq15AzF28jgpeY6yk6GVdrfFqdrD6Iw+QlB8g0YS2g7dyQmXM/IDhBhT0UCiRf59lfqmmDvzRt6kByV/m4JjtzuaujMUM2c5Z2d6JdKrRb3K2q6mA+oYVz8JnDdKPmmNthzkAk/lN63sYPgevrguc72aZX/L9C6x09GYyxBgCX4NlvyGUHOKELlm5rXeR1kchuChJt4SSwyddZRXgvwMGvYo4QSlk3/zkHD8UHxwVJA6zjZZqP8v8kK8OWLnIZtLyCAJagYC4rTGW/9Pqj92N/c+LUaAj27movwbi19tk/whRCIE7Q9vyI6yvRpftAKVTdUjOW40X3h5OXsKCdmFcx0xlLJoSuQngnrJe7Kcjm4OMq9FlC7CMmScQANuNvjfP3PjGXDBaUQmbp296S5L4DrpbrHN1T87ZVEZVCzg1FF0Ft+dKrlLukI+/c9ENo+TvlTDbYFvuKPtQ9+l052rXrgKoWkDAFnvh0wTOmYn8R5f4k/jN/fZiCM1tQx9jQQ4ANhqG4hiL0qIFTGViG9DKB7GYzgubnpofgYRwO+DFjh0Zin2m4b/97EDkXkc+f6xYAPX0KK2I/7fUQuwzuwo/L3AkcjugPNixC8cHf0FyPjWlItmLxWw4Ou9YsQCr5fijMGoD/zpdRy95HRysyXA74MWOnscpO4j2y3HAVisw85hX5+AFBRSHt4ShfLFkIMXTqyKFc46xdzQM6XbAi702a7sy04J0+feReMFKp5q9esYLCqAZYw/k14E/xcLLsFElaornTuJB0svMuJINy8xkIYuL+xPAlWRceH6+HX7THJ0djLUom46zREu7tTkxwmf/FdOZ/sh6Q8qvEAiHpm4PJ4a/doJe0gH1t+aHRgCzOvBvJedEK5OFE5jpm4AGP2a8Dxe3gGJ/pAutug9Gp6he92CsSsWBaEcxGx0FHytmIpuqGkOpldqNYQK8cSoXvd+xLxXADw0kf6UkJNFtdo5MOgaLjiQOQHcn+A6h5NuL2s0qsC2LOM75PcF3yr5STuBSAcGG+meA14K/CI21HcS4LBT6tv0QAh8Dr5l93AhZzG5ZJ4VxAqdZUEl9z7WJ4aN+svMvwHHL21UKTd1mqvChH7/Za5xzXBBKrUcB0TQ+Ulgkfbi/H/YT5EptrGzsEK7tR1B7ln9BBwckYfMiuSqklSznIuoIIOM42MQO+QnduCoFCI0bpkzjCjddHPN/F+2Yu+sd9bKNpVwHhbS3LluK/0zgfwD0xYI5dXuzlQAAAABJRU5ErkJggg==');
+  }
+
+  div.callout-warning.callout-style-default .callout-caption {
+    background-color: #fcefdc
+  }
+
+  div.callout-tip {
+    border-left-color: #02b875 !important;
+  }
+
+  div.callout-tip .callout-icon::before {
+    background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAAXNSR0IArs4c6QAAAERlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAA6ABAAMAAAABAAEAAKACAAQAAAABAAAAIKADAAQAAAABAAAAIAAAAACshmLzAAADr0lEQVRYCe1XTWgTQRj9ZjZV8a9SPIkKgj8I1bMHsUWrqYLVg4Ue6v9BwZOxSYsIerFao7UiUryIqJcqgtpimhbBXoSCVxUFe9CTiogUrUp2Pt+3aUI2u5vdNh4dmMzOzHvvezuz8xNFM0mjnbXaNu1MvFWRXkXEyE6aYOYJpdW4IXuA4r0fo8qqSMDBU0v1HJUgVieAXxzCsdE/YJTdFcVIZQNMyhruOMJKXYFoLfIfIvVIMWdsrd+Rpd86ZmyzzjJmLStqRn0v8lzkb4rVIXvnpScOJuAn2ACC65FkPzEdEy4TPWRLJ2h7z4cArXzzaOdKlbOvKKX25Wl00jSnrwVxAg3o4dRxhO13RBSdNvH0xSARv3adTXbBdTf64IWO2vH0LT+cv4GR1DJt+DUItaQogeBX/chhbTBxEiZ6gftlDNXTrvT7co4ub5A6gp9HIcHvzTa46OS5fBeP87Qm0fQkr4FsYgVQ7Qg+ZayaDg9jhg1GkWj8RG6lkeSacrrHgDaxdoBiZPg+NXV/KifMuB6//JmYH4CntVEHy/keA6x4h4CU5oFy8GzrBS18cLJMXcljAKB6INjWsRcuZBWVaS3GDrqB7rdapVIeA+isQ57Eev9eCqzqOa81CY05VLd6SamW2wA2H3SiTbnbSxmzfp7WtKZkqy4mdyAlGx7ennghYf8voqp9cLSgKdqNfa6RdRsAAkPwRuJZNbpByn+RrJi1RXTwdi8RQF6ymDwGMAtZ6TVE+4uoKh+MYkcLsT0Hk8eAienbiGdjJHZTpmNjlbFJNKDVAp2fJlYju6IreQxQ08UJDNYdoLSl6AadO+fFuCQqVMB1NJwPm69T04Wv5WhfcWyfXQB+wXRs1pt+nCknRa0LVzSA/2B+a9+zQJadb7IyyV24YAxKp2Jqs3emZTuNnKxsah+uabKbMk7CbTgJx/zIgQYErIeTKRQ9yD9wxVof5YolPHqaWo7TD6tJlh7jQnK5z2n3+fGdggIOx2kaa2YI9QWarc5Ce1ipNWMKeSG4DysFF52KBmTNMmn5HqCFkwy34rDg05gDwgH3bBi+sgFhN/e8QvRn8kbamCOhgrZ9GJhFDgfcMHzFb6BAtjKpFhzTjwv1KCVuxHvCbsSiEz4CANnj84cwHdFXAbAOJ4LTSAawGWFn5tDhLMYz6nWeU2wJfIhmIJBefcd/A5FWQWGgrWzyORZ3Q6HuV+Jf0Bj+BTX69fm1zWgK7By1YTXchFDORywnfQ7GpzOo6S+qECrsx2ifVQAAAABJRU5ErkJggg==');
+  }
+
+  div.callout-tip.callout-style-default .callout-caption {
+    background-color: #ccf1e3
+  }
+
+  div.callout-caution {
+    border-left-color: #fd7e14 !important;
+  }
+
+  div.callout-caution .callout-icon::before {
+    background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAAXNSR0IArs4c6QAAAERlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAA6ABAAMAAAABAAEAAKACAAQAAAABAAAAIKADAAQAAAABAAAAIAAAAACshmLzAAACV0lEQVRYCdVWzWoUQRCuqp2ICBLJXgITZL1EfQDBW/bkzUMUD7klD+ATSHBEfAIfQO+iXsWDxJsHL96EHAwhgzlkg8nBg25XWb0zIb0zs9muYYWkoKeru+vn664fBqElyZNuyh167NXJ8Ut8McjbmEraKHkd7uAnAFku+VWdb3reSmRV8PKSLfZ0Gjn3a6Xlcq9YGb6tADjn+lUfTXtVmaZ1KwBIvFI11rRXlWlatwIAAv2asaa9mlB9wwygiDX26qaw1yYPzFXg2N1GgG0FMF8Oj+VIx7E/03lHx8UhvYyNZLN7BwSPgekXXLribw7w5/c8EF+DBK5idvDVYtEEwMeYefjjLAdEyQ3M9nfOkgnPTEkYU+sxMq0BxNR6jExrAI31H1rzvLEfRIdgcv1XEdj6QTQAS2wtstEALLG1yEZ3QhH6oDX7ExBSFEkFINXH98NTrme5IOaaA7kIfiu2L8A3qhH9zRbukdCqdsA98TdElyeMe5BI8Rs2xHRIsoTSSVFfCFCWGPn9XHb4cdobRIWABNf0add9jakDjQJpJ1bTXOJXnnRXHRf+dNL1ZV1MBRCXhMbaHqGI1JkKIL7+i8uffuP6wVQAzO7+qVEbF6NbS0LJureYcWXUUhH66nLR5rYmva+2tjRFtojkM2aD76HEGAD3tPtKM309FJg5j/K682ywcWJ3PASCcycH/22u+Bh7Aa0ehM2Fu4z0SAE81HF9RkB21c5bEn4Dzw+/qNOyXr3DCTQDMBOdhi4nAgiFDGCinIa2owCEChUwD8qzd03PG+qdW/4fDzjUMcE1ZpIAAAAASUVORK5CYII=');
+  }
+
+  div.callout-caution.callout-style-default .callout-caption {
+    background-color: #ffe5d0
+  }
+
+  </style>
+  <style type="text/css">
+    .reveal div.sourceCode {
+      margin: 0;
+      overflow: auto;
+    }
+    .reveal div.hanging-indent {
+      margin-left: 1em;
+      text-indent: -1em;
+    }
+    .reveal .slide:not(.center) {
+      height: 100%;
+    }
+    .reveal .slide.scrollable {
+      overflow-y: auto;
+    }
+    .reveal .footnotes {
+      height: 100%;
+      overflow-y: auto;
+    }
+    .reveal .slide .absolute {
+      position: absolute;
+      display: block;
+    }
+    .reveal .footnotes ol {
+      counter-reset: ol;
+      list-style-type: none; 
+      margin-left: 0;
+    }
+    .reveal .footnotes ol li:before {
+      counter-increment: ol;
+      content: counter(ol) ". "; 
+    }
+    .reveal .footnotes ol li > p:first-child {
+      display: inline-block;
+    }
+    .reveal .slide ul,
+    .reveal .slide ol {
+      margin-bottom: 0.5em;
+    }
+    .reveal .slide ul li,
+    .reveal .slide ol li {
+      margin-top: 0.4em;
+      margin-bottom: 0.2em;
+    }
+    .reveal .slide ul[role="tablist"] li {
+      margin-bottom: 0;
+    }
+    .reveal .slide ul li > *:first-child,
+    .reveal .slide ol li > *:first-child {
+      margin-block-start: 0;
+    }
+    .reveal .slide ul li > *:last-child,
+    .reveal .slide ol li > *:last-child {
+      margin-block-end: 0;
+    }
+    .reveal .slide .columns:nth-child(3) {
+      margin-block-start: 0.8em;
+    }
+    .reveal blockquote {
+      box-shadow: none;
+    }
+    .reveal .tippy-content>* {
+      margin-top: 0.2em;
+      margin-bottom: 0.7em;
+    }
+    .reveal .tippy-content>*:last-child {
+      margin-bottom: 0.2em;
+    }
+    .reveal .slide > img.stretch.quarto-figure-center,
+    .reveal .slide > img.r-stretch.quarto-figure-center {
+      display: block;
+      margin-left: auto;
+      margin-right: auto; 
+    }
+    .reveal .slide > img.stretch.quarto-figure-left,
+    .reveal .slide > img.r-stretch.quarto-figure-left  {
+      display: block;
+      margin-left: 0;
+      margin-right: auto; 
+    }
+    .reveal .slide > img.stretch.quarto-figure-right,
+    .reveal .slide > img.r-stretch.quarto-figure-right  {
+      display: block;
+      margin-left: auto;
+      margin-right: 0; 
+    }
+  </style>
+  <script src="Quarto_Slide_files/libs/htmlwidgets-1.5.3/htmlwidgets.js"></script>
+  <script src="Quarto_Slide_files/libs/plotly-binding-4.9.3/plotly.js"></script>
+  <script src="Quarto_Slide_files/libs/typedarray-0.1/typedarray.min.js"></script>
+  <script src="Quarto_Slide_files/libs/jquery-3.5.1/jquery.min.js"></script>
+  <link href="Quarto_Slide_files/libs/crosstalk-1.1.1/css/crosstalk.css" rel="stylesheet">
+  <script src="Quarto_Slide_files/libs/crosstalk-1.1.1/js/crosstalk.min.js"></script>
+  <link href="Quarto_Slide_files/libs/plotly-htmlwidgets-css-1.57.1/plotly-htmlwidgets.css" rel="stylesheet">
+  <script src="Quarto_Slide_files/libs/plotly-main-1.57.1/plotly-latest.min.js"></script>
+  <script src="Quarto_Slide_files/libs/d3-4.5.0/d3.min.js"></script>
+  <script src="Quarto_Slide_files/libs/sankey-1/sankey.js"></script>
+  <script src="Quarto_Slide_files/libs/sankeyNetwork-binding-0.4/sankeyNetwork.js"></script>
+  <link href="Quarto_Slide_files/libs/leaflet-1.3.1/leaflet.css" rel="stylesheet">
+  <script src="Quarto_Slide_files/libs/leaflet-1.3.1/leaflet.js"></script>
+  <link href="Quarto_Slide_files/libs/leafletfix-1.0.0/leafletfix.css" rel="stylesheet">
+  <script src="Quarto_Slide_files/libs/proj4-2.6.2/proj4.min.js"></script>
+  <script src="Quarto_Slide_files/libs/Proj4Leaflet-1.0.1/proj4leaflet.js"></script>
+  <link href="Quarto_Slide_files/libs/rstudio_leaflet-1.3.1/rstudio_leaflet.css" rel="stylesheet">
+  <script src="Quarto_Slide_files/libs/leaflet-binding-2.0.4.1/leaflet.js"></script>
+  <link href="Quarto_Slide_files/libs/leaflet-markercluster-1.0.5/MarkerCluster.css" rel="stylesheet">
+  <link href="Quarto_Slide_files/libs/leaflet-markercluster-1.0.5/MarkerCluster.Default.css" rel="stylesheet">
+  <script src="Quarto_Slide_files/libs/leaflet-markercluster-1.0.5/leaflet.markercluster.js"></script>
+  <script src="Quarto_Slide_files/libs/leaflet-markercluster-1.0.5/leaflet.markercluster.freezable.js"></script>
+  <script src="Quarto_Slide_files/libs/leaflet-markercluster-1.0.5/leaflet.markercluster.layersupport.js"></script>
+</head>
+<body class="quarto-light">
+  <div class="reveal">
+    <div class="slides">
+
+<section id="title-slide" class="center">
+  <h1 class="title">Reproducible Research &amp; Intereactive Presentation</h1>
+  <p class="author">연습용</p>
+  <p class="date">11/26/2022</p>
+</section>
+
+<section>
+<section id="사회과학-연구와-재현-가능성" class="title-slide slide level1 center">
+<h1>사회과학 연구와 재현 가능성</h1>
+
+</section>
+<section id="학술-저널" class="slide level2">
+<h2>학술 저널</h2>
+<ul>
+<li><p>경제학 최상위 저널은 논문 게재 조건으로 데이터와 코드를 함께 제출할 것을 요구</p>
+<ul>
+<li><p><strong>American Economics Review</strong></p>
+<ul>
+<li><a href="https://www.aeaweb.org/journals/data/data-code-policy">Data and Code Availability Policy</a><br>
+<img data-src="images/paste-9BC4E139.png"></li>
+</ul></li>
+<li><p>데이터를 공개하기 어려운 경우(행정데이터, 기업내부데이터)는 예외 적용이 되지만, 그래도 코드는 반드시 제출</p></li>
+</ul></li>
+</ul>
+</section>
+<section id="학술-저널-1" class="slide level2">
+<h2>학술 저널</h2>
+<ul>
+<li><p>Archive 역할을 하는 공간의 역할 확대</p>
+<ul>
+<li>Data and programs should be archived in the AEA Data and Code Repository: <a href="https://www.openicpsr.org/openicpsr/search/aea/studies">OPEN ICPSR for AEA</a></li>
+</ul></li>
+<li><p><strong>Quarterly Journal of Economic</strong>는 <strong>Harvard Dataverse</strong> 활용</p>
+<ul>
+<li><a href="https://doi.org/10.1093/QJE/QJAC003">Exley, C. L., &amp; Kessler, J. B. (2022). The Gender Gap in Self-Promotion</a>: <a href="https://dataverse.harvard.edu/dataset.xhtml?persistentId=doi:10.7910/DVN/YSWKHY">Replication Data at Harvard Dataverse</a><br>
+<img data-src="images/paste-635CF3B9.png" width="600"></li>
+</ul></li>
+</ul>
+</section>
+<section id="연구자-커뮤니티" class="slide level2">
+<h2>연구자 커뮤니티</h2>
+<p>저널에서 요구하지 않더라도 연구자 스스로 데이터와 코드를 공개하는 움직임 확대</p>
+<ul>
+<li><a href="https://rajchetty.com/">Raj Chetty</a> 연구 사례
+<ul>
+<li><a href="https://opportunityinsights.org/">Opportunity Insights</a>
+<ul>
+<li><a href="https://opportunityinsights.org/paper/social-capital-i-measurement-and-associations-with-economic-mobility/">Social Capital I: Measurement and Associations with Economic Mobility</a></li>
+</ul></li>
+</ul></li>
+<li>Github를 통한 공유
+<ul>
+<li><a href="https://jaeyk.github.io/">김재연 교수님</a></li>
+</ul></li>
+</ul>
+</section>
+<section id="randomized-experiment" class="slide level2">
+<h2>Randomized Experiment</h2>
+<ul>
+<li><p>무작위 실험(Randomized Experiment)을 하는 경우 사전에 연구계획서(pre-analysis plan)를 공개된 웹사이트 등록하도록 권장장</p>
+<ul>
+<li>“The information required for pre-registration typically includes the country and title, a brief description of the project, the timeline, outcomes to measure, sample size, study design, and ethical approval details.”</li>
+<li>실험 설계, 가설, 분석 방법</li>
+<li><a href="https://www.socialscienceregistry.org/">AEA RCT Registry</a></li>
+</ul></li>
+</ul>
+</section></section>
+<section>
+<section id="대학-현장에서의-경험과-고민" class="title-slide slide level1 center">
+<h1>대학 현장에서의 경험과 고민</h1>
+
+</section>
+<section id="대학-내-변화" class="slide level2">
+<h2>대학 내 변화</h2>
+<ul>
+<li>데이터 분석에 대한 수요가 급성장하며 대학 현장도 빠르게 변화하고 있고 더 변화해야 함</li>
+<li>평가의 공정성을 담보할 수 있고 지속 가능한 시험 방식에 대한 고민(오픈북, 학생수, 채점)</li>
+</ul>
+<div class="quarto-layout-panel">
+<div class="quarto-layout-row quarto-layout-valign-top">
+<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: center;">
+<p><img data-src="images/paste-3A909A1D.png"></p>
+</div>
+<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: center;">
+<p><img data-src="images/paste-312FEDF0.png"></p>
+</div>
+</div>
+</div>
+</section>
+<section id="데이터-분석-관련-수업-수요-증가" class="slide level2">
+<h2>데이터 분석 관련 수업 수요 증가</h2>
+<ul>
+<li>데이터 분석 관련 수업의 확대
+<ul>
+<li>경제학 AI 마이크로디그리 프로그램</li>
+</ul></li>
+</ul>
+<div>
+<ul>
+<li class="fragment">학부생, 전일제 대학원생, 직장인 대학원생(금융권 50%) 대상 강의
+<ul>
+<li class="fragment">Stata - 데이터 전처리 및 경제학 주요 모델 분석</li>
+<li class="fragment">R - 데이터 수집, 텍스트데이터 처리, GIS 분석 등</li>
+<li class="fragment">QGIS - 지역 기반 통계 정보 데이터 증가</li>
+<li class="fragment">Python - 직장인 수요 반영</li>
+</ul></li>
+</ul>
+</div>
+</section>
+<section id="수업-사례" class="slide level2">
+<h2>수업 사례</h2>
+<ul>
+<li>학생 프로그래밍 관련 발표(전일제 대상 2022년 2학기)
+<ul>
+<li>Quarto for Blog and Website</li>
+<li>Shiny</li>
+<li>Random Forest, 문서 요약</li>
+<li>인공위성 야간조도(nighttime light) 데이터 분석</li>
+</ul></li>
+</ul>
+<div>
+<ul>
+<li class="fragment">기말 과제 사례(퀀트응용경제학과 2022년 1학기)
+<ul>
+<li class="fragment"><a href="https://slackquant.shinyapps.io/eda_2022s_project/">Shiny Dashboard 사례1</a>, <a href="https://bororia.shinyapps.io/YBSMacroDB/">Shiny Dashboard 사례2</a></li>
+<li class="fragment"><a href="https://skkulabor.github.io/QAE_Dashboard_Draft%20(3).html">FlexDashboard 사례1</a>, <a href="https://skkulabor.github.io/QAE_Dashboard_Draft%20(9).html">FlexDashboard 사례2</a></li>
+</ul></li>
+</ul>
+</div>
+</section></section>
+<section>
+<section id="quarto-slide-for-academic-use" class="title-slide slide level1 center">
+<h1>Quarto Slide for Academic Use</h1>
+
+</section>
+<section id="quarto-슬라이드의-장점" class="slide level2">
+<h2>Quarto 슬라이드의 장점</h2>
+<ul>
+<li>Quarto를 이용한 HTML 슬라이드는 학계에서 활용 가능한 매력적인 툴 - <strong>Interaction</strong></li>
+<li>깔끔하고 정돈된 슬라이드를 (능숙해지면) 빠르게 제작</li>
+<li>PPT에 코드를 수록하더라도 특수문자, 공백, 줄바꿈 등의 이유로 복사해서 붙여넣어도 에러가 발생하는 경우가 있음</li>
+</ul>
+<div>
+<ul>
+<li class="fragment"><strong>Visual Editor</strong>의 도입 &amp; <strong>캡쳐 이미지</strong> 붙여넣기 기능 추가</li>
+<li class="fragment">다양한 문서 유형으로 쉽게 변환 가능(슬라이드, 강의노트)</li>
+<li class="fragment">Slide는 HTML, PDF 뿐만 아니라 <strong>PPT</strong> 지원</li>
+<li class="fragment">PPT에서 수작업으로 하는 <strong>애니메이션 기능</strong>을 피할 수 있음</li>
+</ul>
+</div>
+</section>
+<section id="quarto-슬라이드의-유용한-기능" class="slide level2">
+<h2>Quarto 슬라이드의 유용한 기능</h2>
+<p>아래 링크를 통해 소개된 슬라이드와 관련 코드를 활용하였음</p>
+<ul>
+<li><a href="https://quarto.org/docs/presentations/">Quarto - Presentations</a></li>
+<li><a href="https://quarto.org/docs/gallery/#presentations">Quarto - Gallery - Presentations</a>
+<ul>
+<li><a href="https://github.com/quarto-dev/quarto-web/blob/main/docs/presentations/revealjs/demo/index.qmd">qmd source file at GitHub</a></li>
+</ul></li>
+</ul>
+</section>
+<section id="tabsets-샘플-in-quarto-demo" class="slide level2 smaller scrollable">
+<h2>Tabsets 샘플 in Quarto Demo</h2>
+<div class="panel-tabset">
+<ul id="tabset-1" class="panel-tabset-tabby"><li><a data-tabby-default="" href="#tabset-1-1">Plot</a></li><li><a href="#tabset-1-2">Data</a></li></ul>
+<div class="tab-content">
+<div id="tabset-1-1">
+<div class="cell">
+<div class="cell-output-display">
+<p><img data-src="Quarto_Slide_files/figure-revealjs/unnamed-chunk-2-1.png" width="960"></p>
+</div>
+</div>
+</div>
+<div id="tabset-1-2">
+<div class="cell">
+<div class="cell-output-display">
+<table style="width:100%;">
+<colgroup>
+<col style="width: 27%">
+<col style="width: 6%">
+<col style="width: 5%">
+<col style="width: 8%">
+<col style="width: 5%">
+<col style="width: 6%">
+<col style="width: 8%">
+<col style="width: 8%">
+<col style="width: 4%">
+<col style="width: 4%">
+<col style="width: 6%">
+<col style="width: 6%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;"></th>
+<th style="text-align: right;">mpg</th>
+<th style="text-align: right;">cyl</th>
+<th style="text-align: right;">disp</th>
+<th style="text-align: right;">hp</th>
+<th style="text-align: right;">drat</th>
+<th style="text-align: right;">wt</th>
+<th style="text-align: right;">qsec</th>
+<th style="text-align: right;">vs</th>
+<th style="text-align: right;">am</th>
+<th style="text-align: right;">gear</th>
+<th style="text-align: right;">carb</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">Mazda RX4</td>
+<td style="text-align: right;">21.0</td>
+<td style="text-align: right;">6</td>
+<td style="text-align: right;">160.0</td>
+<td style="text-align: right;">110</td>
+<td style="text-align: right;">3.90</td>
+<td style="text-align: right;">2.620</td>
+<td style="text-align: right;">16.46</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">4</td>
+<td style="text-align: right;">4</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Mazda RX4 Wag</td>
+<td style="text-align: right;">21.0</td>
+<td style="text-align: right;">6</td>
+<td style="text-align: right;">160.0</td>
+<td style="text-align: right;">110</td>
+<td style="text-align: right;">3.90</td>
+<td style="text-align: right;">2.875</td>
+<td style="text-align: right;">17.02</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">4</td>
+<td style="text-align: right;">4</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Datsun 710</td>
+<td style="text-align: right;">22.8</td>
+<td style="text-align: right;">4</td>
+<td style="text-align: right;">108.0</td>
+<td style="text-align: right;">93</td>
+<td style="text-align: right;">3.85</td>
+<td style="text-align: right;">2.320</td>
+<td style="text-align: right;">18.61</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">4</td>
+<td style="text-align: right;">1</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Hornet 4 Drive</td>
+<td style="text-align: right;">21.4</td>
+<td style="text-align: right;">6</td>
+<td style="text-align: right;">258.0</td>
+<td style="text-align: right;">110</td>
+<td style="text-align: right;">3.08</td>
+<td style="text-align: right;">3.215</td>
+<td style="text-align: right;">19.44</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">3</td>
+<td style="text-align: right;">1</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Hornet Sportabout</td>
+<td style="text-align: right;">18.7</td>
+<td style="text-align: right;">8</td>
+<td style="text-align: right;">360.0</td>
+<td style="text-align: right;">175</td>
+<td style="text-align: right;">3.15</td>
+<td style="text-align: right;">3.440</td>
+<td style="text-align: right;">17.02</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">3</td>
+<td style="text-align: right;">2</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Valiant</td>
+<td style="text-align: right;">18.1</td>
+<td style="text-align: right;">6</td>
+<td style="text-align: right;">225.0</td>
+<td style="text-align: right;">105</td>
+<td style="text-align: right;">2.76</td>
+<td style="text-align: right;">3.460</td>
+<td style="text-align: right;">20.22</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">3</td>
+<td style="text-align: right;">1</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Duster 360</td>
+<td style="text-align: right;">14.3</td>
+<td style="text-align: right;">8</td>
+<td style="text-align: right;">360.0</td>
+<td style="text-align: right;">245</td>
+<td style="text-align: right;">3.21</td>
+<td style="text-align: right;">3.570</td>
+<td style="text-align: right;">15.84</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">3</td>
+<td style="text-align: right;">4</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Merc 240D</td>
+<td style="text-align: right;">24.4</td>
+<td style="text-align: right;">4</td>
+<td style="text-align: right;">146.7</td>
+<td style="text-align: right;">62</td>
+<td style="text-align: right;">3.69</td>
+<td style="text-align: right;">3.190</td>
+<td style="text-align: right;">20.00</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">4</td>
+<td style="text-align: right;">2</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Merc 230</td>
+<td style="text-align: right;">22.8</td>
+<td style="text-align: right;">4</td>
+<td style="text-align: right;">140.8</td>
+<td style="text-align: right;">95</td>
+<td style="text-align: right;">3.92</td>
+<td style="text-align: right;">3.150</td>
+<td style="text-align: right;">22.90</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">4</td>
+<td style="text-align: right;">2</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Merc 280</td>
+<td style="text-align: right;">19.2</td>
+<td style="text-align: right;">6</td>
+<td style="text-align: right;">167.6</td>
+<td style="text-align: right;">123</td>
+<td style="text-align: right;">3.92</td>
+<td style="text-align: right;">3.440</td>
+<td style="text-align: right;">18.30</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">4</td>
+<td style="text-align: right;">4</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Merc 280C</td>
+<td style="text-align: right;">17.8</td>
+<td style="text-align: right;">6</td>
+<td style="text-align: right;">167.6</td>
+<td style="text-align: right;">123</td>
+<td style="text-align: right;">3.92</td>
+<td style="text-align: right;">3.440</td>
+<td style="text-align: right;">18.90</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">4</td>
+<td style="text-align: right;">4</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Merc 450SE</td>
+<td style="text-align: right;">16.4</td>
+<td style="text-align: right;">8</td>
+<td style="text-align: right;">275.8</td>
+<td style="text-align: right;">180</td>
+<td style="text-align: right;">3.07</td>
+<td style="text-align: right;">4.070</td>
+<td style="text-align: right;">17.40</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">3</td>
+<td style="text-align: right;">3</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Merc 450SL</td>
+<td style="text-align: right;">17.3</td>
+<td style="text-align: right;">8</td>
+<td style="text-align: right;">275.8</td>
+<td style="text-align: right;">180</td>
+<td style="text-align: right;">3.07</td>
+<td style="text-align: right;">3.730</td>
+<td style="text-align: right;">17.60</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">3</td>
+<td style="text-align: right;">3</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Merc 450SLC</td>
+<td style="text-align: right;">15.2</td>
+<td style="text-align: right;">8</td>
+<td style="text-align: right;">275.8</td>
+<td style="text-align: right;">180</td>
+<td style="text-align: right;">3.07</td>
+<td style="text-align: right;">3.780</td>
+<td style="text-align: right;">18.00</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">3</td>
+<td style="text-align: right;">3</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Cadillac Fleetwood</td>
+<td style="text-align: right;">10.4</td>
+<td style="text-align: right;">8</td>
+<td style="text-align: right;">472.0</td>
+<td style="text-align: right;">205</td>
+<td style="text-align: right;">2.93</td>
+<td style="text-align: right;">5.250</td>
+<td style="text-align: right;">17.98</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">3</td>
+<td style="text-align: right;">4</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Lincoln Continental</td>
+<td style="text-align: right;">10.4</td>
+<td style="text-align: right;">8</td>
+<td style="text-align: right;">460.0</td>
+<td style="text-align: right;">215</td>
+<td style="text-align: right;">3.00</td>
+<td style="text-align: right;">5.424</td>
+<td style="text-align: right;">17.82</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">3</td>
+<td style="text-align: right;">4</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Chrysler Imperial</td>
+<td style="text-align: right;">14.7</td>
+<td style="text-align: right;">8</td>
+<td style="text-align: right;">440.0</td>
+<td style="text-align: right;">230</td>
+<td style="text-align: right;">3.23</td>
+<td style="text-align: right;">5.345</td>
+<td style="text-align: right;">17.42</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">3</td>
+<td style="text-align: right;">4</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Fiat 128</td>
+<td style="text-align: right;">32.4</td>
+<td style="text-align: right;">4</td>
+<td style="text-align: right;">78.7</td>
+<td style="text-align: right;">66</td>
+<td style="text-align: right;">4.08</td>
+<td style="text-align: right;">2.200</td>
+<td style="text-align: right;">19.47</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">4</td>
+<td style="text-align: right;">1</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Honda Civic</td>
+<td style="text-align: right;">30.4</td>
+<td style="text-align: right;">4</td>
+<td style="text-align: right;">75.7</td>
+<td style="text-align: right;">52</td>
+<td style="text-align: right;">4.93</td>
+<td style="text-align: right;">1.615</td>
+<td style="text-align: right;">18.52</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">4</td>
+<td style="text-align: right;">2</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Toyota Corolla</td>
+<td style="text-align: right;">33.9</td>
+<td style="text-align: right;">4</td>
+<td style="text-align: right;">71.1</td>
+<td style="text-align: right;">65</td>
+<td style="text-align: right;">4.22</td>
+<td style="text-align: right;">1.835</td>
+<td style="text-align: right;">19.90</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">4</td>
+<td style="text-align: right;">1</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Toyota Corona</td>
+<td style="text-align: right;">21.5</td>
+<td style="text-align: right;">4</td>
+<td style="text-align: right;">120.1</td>
+<td style="text-align: right;">97</td>
+<td style="text-align: right;">3.70</td>
+<td style="text-align: right;">2.465</td>
+<td style="text-align: right;">20.01</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">3</td>
+<td style="text-align: right;">1</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Dodge Challenger</td>
+<td style="text-align: right;">15.5</td>
+<td style="text-align: right;">8</td>
+<td style="text-align: right;">318.0</td>
+<td style="text-align: right;">150</td>
+<td style="text-align: right;">2.76</td>
+<td style="text-align: right;">3.520</td>
+<td style="text-align: right;">16.87</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">3</td>
+<td style="text-align: right;">2</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">AMC Javelin</td>
+<td style="text-align: right;">15.2</td>
+<td style="text-align: right;">8</td>
+<td style="text-align: right;">304.0</td>
+<td style="text-align: right;">150</td>
+<td style="text-align: right;">3.15</td>
+<td style="text-align: right;">3.435</td>
+<td style="text-align: right;">17.30</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">3</td>
+<td style="text-align: right;">2</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Camaro Z28</td>
+<td style="text-align: right;">13.3</td>
+<td style="text-align: right;">8</td>
+<td style="text-align: right;">350.0</td>
+<td style="text-align: right;">245</td>
+<td style="text-align: right;">3.73</td>
+<td style="text-align: right;">3.840</td>
+<td style="text-align: right;">15.41</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">3</td>
+<td style="text-align: right;">4</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Pontiac Firebird</td>
+<td style="text-align: right;">19.2</td>
+<td style="text-align: right;">8</td>
+<td style="text-align: right;">400.0</td>
+<td style="text-align: right;">175</td>
+<td style="text-align: right;">3.08</td>
+<td style="text-align: right;">3.845</td>
+<td style="text-align: right;">17.05</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">3</td>
+<td style="text-align: right;">2</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Fiat X1-9</td>
+<td style="text-align: right;">27.3</td>
+<td style="text-align: right;">4</td>
+<td style="text-align: right;">79.0</td>
+<td style="text-align: right;">66</td>
+<td style="text-align: right;">4.08</td>
+<td style="text-align: right;">1.935</td>
+<td style="text-align: right;">18.90</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">4</td>
+<td style="text-align: right;">1</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Porsche 914-2</td>
+<td style="text-align: right;">26.0</td>
+<td style="text-align: right;">4</td>
+<td style="text-align: right;">120.3</td>
+<td style="text-align: right;">91</td>
+<td style="text-align: right;">4.43</td>
+<td style="text-align: right;">2.140</td>
+<td style="text-align: right;">16.70</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">5</td>
+<td style="text-align: right;">2</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Lotus Europa</td>
+<td style="text-align: right;">30.4</td>
+<td style="text-align: right;">4</td>
+<td style="text-align: right;">95.1</td>
+<td style="text-align: right;">113</td>
+<td style="text-align: right;">3.77</td>
+<td style="text-align: right;">1.513</td>
+<td style="text-align: right;">16.90</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">5</td>
+<td style="text-align: right;">2</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Ford Pantera L</td>
+<td style="text-align: right;">15.8</td>
+<td style="text-align: right;">8</td>
+<td style="text-align: right;">351.0</td>
+<td style="text-align: right;">264</td>
+<td style="text-align: right;">4.22</td>
+<td style="text-align: right;">3.170</td>
+<td style="text-align: right;">14.50</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">5</td>
+<td style="text-align: right;">4</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Ferrari Dino</td>
+<td style="text-align: right;">19.7</td>
+<td style="text-align: right;">6</td>
+<td style="text-align: right;">145.0</td>
+<td style="text-align: right;">175</td>
+<td style="text-align: right;">3.62</td>
+<td style="text-align: right;">2.770</td>
+<td style="text-align: right;">15.50</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">5</td>
+<td style="text-align: right;">6</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Maserati Bora</td>
+<td style="text-align: right;">15.0</td>
+<td style="text-align: right;">8</td>
+<td style="text-align: right;">301.0</td>
+<td style="text-align: right;">335</td>
+<td style="text-align: right;">3.54</td>
+<td style="text-align: right;">3.570</td>
+<td style="text-align: right;">14.60</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">5</td>
+<td style="text-align: right;">8</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Volvo 142E</td>
+<td style="text-align: right;">21.4</td>
+<td style="text-align: right;">4</td>
+<td style="text-align: right;">121.0</td>
+<td style="text-align: right;">109</td>
+<td style="text-align: right;">4.11</td>
+<td style="text-align: right;">2.780</td>
+<td style="text-align: right;">18.60</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">4</td>
+<td style="text-align: right;">2</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="tabsets-활용-사례-생각해보기" class="slide level2 smaller scrollable">
+<h2>Tabsets 활용 사례 생각해보기</h2>
+<div class="panel-tabset">
+<ul id="tabset-2" class="panel-tabset-tabby"><li><a data-tabby-default="" href="#tabset-2-1">문제</a></li><li><a href="#tabset-2-2">코드</a></li></ul>
+<div class="tab-content">
+<div id="tabset-2-1">
+<p><a href="http://www.lec.co.kr/news/articleList.html?sc_section_code=S1N2&amp;view_type=sm">법률저널 로스쿨 섹션</a>에 올라온 최근 기사 200개(1~10페이지)를 대상으로</p>
+<p>{기사 제목, 기사 게시 시점, 도입부, 기사 링크, 기자이름, 게재시점}을 아래와 같이 수집하세요.</p>
+<p><img data-src="images/paste-7ED6C90F.png"></p>
+</div>
+<div id="tabset-2-2">
+<div class="cell">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1"></a>  URL <span class="ot">&lt;-</span> <span class="st">"http://www.lec.co.kr/news/articleList.html?page=1&amp;total=7220&amp;box_idxno=&amp;sc_section_code=S1N2&amp;view_type=sm"</span></span>
+<span id="cb1-2"><a href="#cb1-2"></a></span>
+<span id="cb1-3"><a href="#cb1-3"></a>  res <span class="ot">&lt;-</span> <span class="fu">read_html</span>(URL)</span>
+<span id="cb1-4"><a href="#cb1-4"></a>  </span>
+<span id="cb1-5"><a href="#cb1-5"></a>  pattern <span class="ot">&lt;-</span> <span class="st">".list-titles strong"</span></span>
+<span id="cb1-6"><a href="#cb1-6"></a>  title <span class="ot">&lt;-</span> res <span class="sc">%&gt;%</span> </span>
+<span id="cb1-7"><a href="#cb1-7"></a>    <span class="fu">html_nodes</span>(pattern) <span class="sc">%&gt;%</span> </span>
+<span id="cb1-8"><a href="#cb1-8"></a>    <span class="fu">html_text</span>()</span>
+<span id="cb1-9"><a href="#cb1-9"></a>  </span>
+<span id="cb1-10"><a href="#cb1-10"></a>  pattern <span class="ot">&lt;-</span> <span class="st">".list-titles a"</span></span>
+<span id="cb1-11"><a href="#cb1-11"></a>  link <span class="ot">&lt;-</span> res <span class="sc">%&gt;%</span> </span>
+<span id="cb1-12"><a href="#cb1-12"></a>    <span class="fu">html_nodes</span>(pattern) <span class="sc">%&gt;%</span> </span>
+<span id="cb1-13"><a href="#cb1-13"></a>    <span class="fu">html_attr</span>(<span class="st">"href"</span>) <span class="sc">%&gt;%</span> </span>
+<span id="cb1-14"><a href="#cb1-14"></a>    <span class="fu">head</span>(<span class="dv">20</span>) <span class="sc">%&gt;%</span> </span>
+<span id="cb1-15"><a href="#cb1-15"></a>    <span class="fu">str_c</span>(<span class="st">"http://www.lec.co.kr"</span>, .)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="세대별-사회이동성-인식-plotly" class="slide level2">
+<h2>세대별 사회이동성 인식 (plotly)</h2>
+<p>인터랙티브 시각화를 활용하면 전달력을 높일 수 있음</p>
+<div class="cell">
+<div class="cell-output-display">
+<div id="htmlwidget-a3b543387f61e658190d" style="width:960px;height:480px;" class="plotly html-widget"></div>
+<script type="application/json" data-for="htmlwidget-a3b543387f61e658190d">{"x":{"visdat":{"6e88688748ad":["function () ","plotlyVisDat"]},"cur_data":"6e88688748ad","attrs":{"6e88688748ad":{"x":{},"y":{},"mode":"lines+markers","color":{},"alpha_stroke":1,"sizes":[10,100],"spans":[1,20],"type":"scatter"}},"layout":{"margin":{"b":40,"l":60,"t":25,"r":10},"xaxis":{"domain":[0,1],"automargin":true,"title":"Year","showticklabels":true,"autotick":false,"ticks":"outside","tick0":2009,"dtick":2,"ticklen":5,"tickwidth":2,"tickcolor":"rgba(0,0,255,1)"},"yaxis":{"domain":[0,1],"automargin":true,"title":"Proportion","showticklabels":true,"autotick":false,"ticks":"outside","tick0":0,"dtick":0.05,"ticklen":5,"tickwidth":2,"tickcolor":"rgba(0,0,255,1)","range":[0,0.7]},"showlegend":true,"title":"SMP: Next Generation","hovermode":"closest"},"source":"A","config":{"showSendToCloud":false},"data":[{"x":[2009,2011,2013,2015,2017,2019],"y":[0.6,0.47,0.47,0.32,0.32,0.32],"mode":"lines+markers","type":"scatter","name":"20s","marker":{"color":"rgba(102,194,165,1)","line":{"color":"rgba(102,194,165,1)"}},"textfont":{"color":"rgba(102,194,165,1)"},"error_y":{"color":"rgba(102,194,165,1)"},"error_x":{"color":"rgba(102,194,165,1)"},"line":{"color":"rgba(102,194,165,1)"},"xaxis":"x","yaxis":"y","frame":null},{"x":[2009,2011,2013,2015,2017,2019],"y":[0.6,0.45,0.43,0.32,0.29,0.29],"mode":"lines+markers","type":"scatter","name":"30s","marker":{"color":"rgba(252,141,98,1)","line":{"color":"rgba(252,141,98,1)"}},"textfont":{"color":"rgba(252,141,98,1)"},"error_y":{"color":"rgba(252,141,98,1)"},"error_x":{"color":"rgba(252,141,98,1)"},"line":{"color":"rgba(252,141,98,1)"},"xaxis":"x","yaxis":"y","frame":null},{"x":[2009,2011,2013,2015,2017,2019],"y":[0.6,0.48,0.45,0.35,0.31,0.32],"mode":"lines+markers","type":"scatter","name":"40s","marker":{"color":"rgba(141,160,203,1)","line":{"color":"rgba(141,160,203,1)"}},"textfont":{"color":"rgba(141,160,203,1)"},"error_y":{"color":"rgba(141,160,203,1)"},"error_x":{"color":"rgba(141,160,203,1)"},"line":{"color":"rgba(141,160,203,1)"},"xaxis":"x","yaxis":"y","frame":null},{"x":[2009,2011,2013,2015,2017,2019],"y":[0.62,0.5,0.5,0.38,0.37,0.34],"mode":"lines+markers","type":"scatter","name":"50s","marker":{"color":"rgba(231,138,195,1)","line":{"color":"rgba(231,138,195,1)"}},"textfont":{"color":"rgba(231,138,195,1)"},"error_y":{"color":"rgba(231,138,195,1)"},"error_x":{"color":"rgba(231,138,195,1)"},"line":{"color":"rgba(231,138,195,1)"},"xaxis":"x","yaxis":"y","frame":null},{"x":[2009,2011,2013,2015,2017,2019],"y":[0.65,0.54,0.53,0.44,0.41,0.39],"mode":"lines+markers","type":"scatter","name":"60s","marker":{"color":"rgba(166,216,84,1)","line":{"color":"rgba(166,216,84,1)"}},"textfont":{"color":"rgba(166,216,84,1)"},"error_y":{"color":"rgba(166,216,84,1)"},"error_x":{"color":"rgba(166,216,84,1)"},"line":{"color":"rgba(166,216,84,1)"},"xaxis":"x","yaxis":"y","frame":null}],"highlight":{"on":"plotly_click","persistent":false,"dynamic":false,"selectize":false,"opacityDim":0.2,"selected":{"opacity":1},"debounce":0},"shinyEvents":["plotly_hover","plotly_click","plotly_selected","plotly_relayout","plotly_brushed","plotly_brushing","plotly_clickannotation","plotly_doubleclick","plotly_deselect","plotly_afterplot","plotly_sunburstclick"],"base_url":"https://plot.ly"},"evals":[],"jsHooks":[]}</script>
+</div>
+</div>
+</section>
+<section id="로스쿨-출신-법조인" class="slide level2">
+<h2>로스쿨 출신 법조인</h2>
+<p>흐름을 인터랙티브하게 잘 보여줄 수 있는 Sankey Diagram</p>
+<div class="cell">
+<div class="cell-output-display">
+<div id="htmlwidget-7205d21f974e8b21803b" style="width:960px;height:480px;" class="sankeyNetwork html-widget"></div>
+<script type="application/json" data-for="htmlwidget-7205d21f974e8b21803b">{"x":{"links":{"source":[0,0,1,1,2,2,3,3,4,4,5,5],"target":[2,3,2,3,4,5,4,5,6,7,6,7],"value":[2897,2774,431,1044,3175,153,2354,1464,5181,348,1403,214]},"nodes":{"name":["General-HS","Special-HS","Non-SKY","SKY","Non-SKY-LS","SKY-LS","Non-Judge-Prosecutor","Judge-Prosecutor"],"group":["General-HS","Special-HS","Non-SKY","SKY","Non-SKY-LS","SKY-LS","Non-Judge-Prosecutor","Judge-Prosecutor"]},"options":{"NodeID":"name","NodeGroup":"name","LinkGroup":null,"colourScale":"d3.scaleOrdinal(d3.schemeCategory20);","fontSize":15,"fontFamily":null,"nodeWidth":15,"nodePadding":10,"units":"","margin":{"top":null,"right":null,"bottom":null,"left":null},"iterations":32,"sinksRight":false}},"evals":[],"jsHooks":[]}</script>
+</div>
+</div>
+</section>
+<section id="leaflet-사례---서울초등학교" class="slide level2">
+<h2>Leaflet 사례 - 서울초등학교</h2>
+<p>초등학교 위경도 정보는 <a href="https://schoolzone.emac.kr/publicData/publicDataList.do">학구도안내서비스</a>에서 초중교 학교 위치 파일을 내려받아서 사용</p>
+<div class="cell">
+<div class="cell-output-display">
+<div id="htmlwidget-1a7f492a8cf607efb402" style="width:960px;height:480px;" class="leaflet html-widget"></div>
+<script type="application/json" data-for="htmlwidget-1a7f492a8cf607efb402">{"x":{"options":{"crs":{"crsClass":"L.CRS.EPSG3857","code":null,"proj4def":null,"projectedBounds":null,"options":{}}},"calls":[{"method":"addTiles","args":["//{s}.tile.openstreetmap.org/{z}/{x}/{y}.png",null,null,{"minZoom":0,"maxZoom":18,"tileSize":256,"subdomains":"abc","errorTileUrl":"","tms":false,"noWrap":false,"zoomOffset":0,"zoomReverse":false,"opacity":1,"zIndex":1,"detectRetina":false,"attribution":"&copy; <a href=\"http://openstreetmap.org\">OpenStreetMap<\/a> contributors, <a href=\"http://creativecommons.org/licenses/by-sa/2.0/\">CC-BY-SA<\/a>"}]},{"method":"addCircleMarkers","args":[[37.49410161,37.51174342,37.62637772,37.62015506,37.52600601,37.52318884,37.61331383,37.60300324,37.65848709,37.58997982,37.4872977,37.49162927,37.47773418,37.53865393,37.59809416,37.6540189,37.62762424,37.50619275,37.50315802,37.58526987,37.50603606,37.60075792,37.4891201,37.5084232,37.48080548,37.57413657,37.55780477,37.50914588,37.53877767,37.61280178,37.52010753,37.47206129,37.58146865,37.50261842,37.47179668,37.60437742,37.57436078,37.5744176,37.5393989,37.49535028,37.49662263,37.51505804,37.57695491,37.49439753,37.61768065,37.51208485,37.48312265,37.5259562,37.47794535,37.50915569,37.45817893,37.57380744,37.50520381,37.54023674,37.51125774,37.49668479,37.51038715,37.49713482,37.53596257,37.63498895,37.66559481,37.66814915,37.54880324,37.49087951,37.48839858,37.50678211,37.57778205,37.55512713,37.45199688,37.56099648,37.48972738,37.54244648,37.65751566,37.51991462,37.47648995,37.6321062,37.45464753,37.522293,37.6415597,37.63730543,37.65756505,37.56385487,37.58216276,37.48112333,37.61567143,37.46232075,37.56827406,37.65604739,37.66537205,37.48782967,37.56242642,37.4773529,37.50034896,37.59188275,37.59203304,37.50558066,37.57300059,37.47395148,37.53170555,37.48536558,37.66078234,37.52950283,37.5676259,37.54755486,37.52394438,37.51398996,37.50154786,37.67955707,37.48548314,37.54732018,37.52001219,37.61501531,37.48939905,37.52024636,37.66527683,37.512868,37.50126873,37.48309001,37.57719558,37.49600417,37.50508433,37.49567494,37.63000893,37.48889497,37.52248219,37.5461524,37.47454373,37.56735918,37.66739926,37.48065828,37.65082107,37.64305965,37.64466805,37.53303783,37.57841,37.60716846,37.50812274,37.55329583,37.56689003,37.55226664,37.57370704,37.51227653,37.6370879,37.54189922,37.5756461,37.48234361,37.50244683,37.57368245,37.50461886,37.51844009,37.59307781,37.46557864,37.48499277,37.52038242,37.51028143,37.60204594,37.64746848,37.56827705,37.58014934,37.54632146,37.51292229,37.57989859,37.49872801,37.59455742,37.54081543,37.4768265,37.58912911,37.47793138,37.48698484,37.60908739,37.54382981,37.55635083,37.49260076,37.49490768,37.58040215,37.51511748,37.46258977,37.46924045,37.50079587,37.53527599,37.52797617,37.64812624,37.53958444,37.61850354,37.49804492,37.58659122,37.50605683,37.51689205,37.44164885,37.45292038,37.53246659,37.58186983,37.59428349,37.51343915,37.59895126,37.5849498,37.6092043,37.44753081,37.47451551,37.63093107,37.54330935,37.52124919,37.49359972,37.65064037,37.56859461,37.49089434,37.46742202,37.59393484,37.5617004,37.4889652,37.56311085,37.58553531,37.61046196,37.52690543,37.54751471,37.59232847,37.63303012,37.65912409,37.50335439,37.47992822,37.60877414,37.49192076,37.48616111,37.5598566,37.63351631,37.65162298,37.48113529,37.51020148,37.48486115,37.44673975,37.52289028,37.53263087,37.60881486,37.5067663,37.47809898,37.56684247,37.52383821,37.53462395,37.58913694,37.59782277,37.48160957,37.57989027,37.4664123,37.63659186,37.49496183,37.57610111,37.60465557,37.61773281,37.54592662,37.64519948,37.55773496,37.49629538,37.48444155,37.56698252,37.48938155,37.49316528,37.53607983,37.50858214,37.56511742,37.5604451,37.60399167,37.61183648,37.49274072,37.51404913,37.51212997,37.53656475,37.63248977,37.66272176,37.48655528,37.56862486,37.6581088,37.61964055,37.52242179,37.55018701,37.55351907,37.62926521,37.54424033,37.52651876,37.50104253,37.59832903,37.61798909,37.55405326,37.60402862,37.55538679,37.57002501,37.50257259,37.5404868,37.53589957,37.61987517,37.59113421,37.57268283,37.49102353,37.5535347,37.59023007,37.53686705,37.53999528,37.67296962,37.49811236,37.51612178,37.60956786,37.54872321,37.54045968,37.49711757,37.56302167,37.47578967,37.5557597,37.47562093,37.66371152,37.56293165,37.61203173,37.54494716,37.55991348,37.50011095,37.55847699,37.49924055,37.48161782,37.59741985,37.60857861,37.50538034,37.64367019,37.68669133,37.54072601,37.56430147,37.4909822,37.56923664,37.49120943,37.55398973,37.56080588,37.50708693,37.48748657,37.47113833,37.62369294,37.56129109,37.52678174,37.5429317,37.66763033,37.52606185,37.55809588,37.51411407,37.53473536,37.48823549,37.58241376,37.55802533,37.47185411,37.53683145,37.47633272,37.67175795,37.61689704,37.65112496,37.594893,37.54416118,37.63194948,37.50391526,37.6640395,37.45940722,37.6232687,37.49047397,37.6015751,37.61212683,37.55010169,37.45477479,37.49906114,37.48574428,37.67050507,37.61346919,37.47881416,37.55488653,37.58622252,37.51996032,37.51796437,37.48842542,37.5023889,37.61664678,37.59805481,37.46424569,37.62666722,37.49690415,37.50467615,37.62122933,37.50145573,37.5533589,37.57211378,37.61027453,37.49283342,37.64866828,37.50937106,37.64278663,37.62081253,37.5618487,37.67323923,37.54661057,37.5529516,37.53877757,37.50881326,37.52810439,37.58336123,37.54304168,37.53027881,37.65298707,37.62864668,37.57960197,37.56856515,37.60564979,37.55764558,37.5006148,37.6523306,37.51294157,37.57095668,37.55991095,37.51002963,37.500908,37.44709025,37.57658427,37.58545471,37.5591762,37.48879881,37.53137101,37.55795026,37.65500731,37.56590051,37.57432025,37.48519096,37.49387139,37.59780796,37.61621955,37.55689629,37.50985335,37.61885977,37.55633675,37.51050225,37.5385062,37.54035344,37.56863502,37.51602612,37.56805126,37.6193999,37.65405216,37.58609494,37.52399802,37.55659684,37.54716438,37.57934044,37.55110281,37.53107315,37.56528345,37.58171496,37.50017384,37.59098046,37.51055944,37.56062412,37.62246894,37.54433609,37.6043771,37.56571163,37.48268633,37.55229188,37.54826989,37.55158286,37.66657456,37.5829164,37.48477207,37.55003812,37.51691589,37.64249339,37.62813045,37.57783539,37.55776262,37.66292996,37.55266332,37.50450266,37.56050463,37.562685,37.62346894,37.5343843,37.49924178,37.63847291,37.50001932,37.55492474,37.50996546,37.54291947,37.56501397,37.60178264,37.54270265,37.54418994,37.58723548,37.56070749,37.56073011,37.56662306,37.54300899,37.45391848,37.45709258,37.62900012,37.57598005,37.48973575,37.55761215,37.53274382,37.5492998,37.52911527,37.46694889,37.5113683,37.51115855,37.57562193,37.61287676,37.53164751,37.52964096,37.55455158,37.59560791,37.48417783,37.46790699,37.68429385,37.61320741,37.57468265,37.62218043,37.61237792,37.58573583,37.64863395,37.60317127,37.54982961,37.53317929,37.49000006,37.59371444,37.57907463,37.64093107,37.56066057,37.49192403,37.53458883,37.60168154,37.49747061,37.51866451,37.49937741,37.57936573,37.61925867,37.59769681,37.59040776,37.62029538,37.60413521,37.55303605,37.49995159,37.54714083,37.64839699,37.46434739,37.63296389,37.54740529,37.53124788,37.51968192,37.5891883,37.47568056,37.6098232,37.56479579,37.62704561,37.55288743,37.57731605,37.5928019,37.59391791,37.55601842,37.57992482,37.5152537,37.54103994,37.48529595,37.54832225,37.56373909,37.52522655,37.53117606,37.58563254,37.54756456,37.54590977,37.60636007,37.55542287,37.55446222,37.54199063,37.55709198,37.56198707,37.58477023,37.65985099,37.55834131,37.54407164,37.51287942,37.52375478,37.55093358,37.65314239,37.55161611,37.64598135,37.61088587,37.55259823,37.56073087,37.62400172,37.48947305,37.53712155,37.65512011,37.47155648,37.54058516,37.64783561,37.50942729,37.60219787,37.47381019,37.45807082,37.46860541,37.47718813,37.48422849,37.5884279,37.49812557,37.55205811,37.49989836,37.55893656],[126.9768411,126.8699978,127.0907213,127.0688927,126.8511587,127.0242775,127.0921725,127.0946485,127.0571716,127.0793361,126.9025393,127.1223566,127.1385039,126.8234816,127.0836798,127.0748416,127.0508421,126.9532007,126.9910009,127.0866805,127.0127721,126.9563523,127.1114055,127.0261867,127.051891,126.9602466,126.82273,126.9331672,126.8558353,126.930945,127.11127,127.0996665,127.0139642,127.0152191,126.9372757,127.0999812,127.0835305,127.0544089,127.0049096,127.1522973,127.1292617,127.0814177,126.8188827,127.0651645,127.0861068,127.1345763,126.8507003,126.8416536,126.896405,127.1317971,126.8885094,127.0733241,126.8880137,126.8767678,126.8673755,127.0780425,126.9266448,127.1303876,126.871927,127.0727394,127.0295856,127.0755891,126.8462805,127.0150822,126.850121,127.0842067,127.0029147,126.8711608,126.9166976,126.9427504,126.858306,126.945885,127.0732694,126.9230217,126.99015,127.0665372,126.9125446,126.8405408,127.069476,127.0641719,127.0465597,127.0237242,127.0967221,126.9564572,127.0236456,126.9179108,126.8174653,127.0349723,127.0613433,127.144909,126.8110229,126.9275253,126.8959027,127.0996567,127.0556198,127.075764,127.0433994,126.9740563,126.8994612,126.9981018,127.0252821,126.829855,127.0276617,127.0912432,126.8674026,127.0950476,126.9980966,127.0383341,126.890983,126.9767347,126.9758975,127.0896681,126.9469801,126.8624156,127.054549,126.8454266,127.1507951,126.9583231,127.0882508,127.1429536,127.1409011,126.916097,127.0532153,127.128721,126.8720819,127.0220121,126.8993703,127.0151801,127.0659829,126.9429238,127.0277691,127.041485,127.0662865,126.8862812,127.0752698,127.0755519,126.9071795,126.9110836,127.088537,126.9608455,126.8045332,126.8828823,127.0330004,127.0153975,127.0289784,126.9788622,126.9058247,126.9183891,126.8492552,127.1340298,126.9444064,126.9004487,127.1275957,127.0608483,127.0890677,126.9344691,127.0476085,126.9633067,126.8102779,127.0176012,127.0471068,127.0662438,126.9008446,127.0487668,127.1009346,126.9178675,127.0478355,126.9125391,126.9427248,127.0384077,126.874714,126.964169,127.0535537,126.8925517,127.0564681,126.8564126,126.9328245,126.9166641,127.0169088,126.9723116,127.0450453,127.0813164,126.8961552,127.0581647,126.8423578,127.0122458,126.8566854,127.0118979,126.9081994,126.9147652,126.9963946,127.0312559,127.1033728,127.1209353,127.0401072,126.8956303,127.0736243,126.9164244,127.1082848,127.0201318,126.8459511,126.9922315,126.9004978,127.0729274,127.0555483,126.9550476,126.8906367,127.0233205,126.8590239,126.9651691,126.9658506,126.8807699,127.0217482,126.9075114,126.9642735,126.9074837,126.9211201,127.0659095,126.9599535,127.0097922,127.0327171,127.0812703,127.0865315,126.9127395,127.0599789,127.0648868,127.0863007,126.9536623,126.9220969,126.9050156,126.9364713,126.8926715,127.0168305,126.8797159,126.984565,126.8525133,126.9039467,127.0691421,126.9998927,127.0135147,126.8371548,126.9181164,126.9086835,127.0419625,126.9526884,126.9882829,127.1051687,126.9275738,126.9535775,126.9292124,126.9879121,126.9893083,126.9760922,126.9045421,126.8384138,127.0326527,126.9514815,126.9651701,127.082436,126.9113858,127.0814383,126.9262388,126.8729387,126.8320115,127.0398509,126.9649864,127.0412247,127.0626484,127.0370393,126.8069694,127.0223015,127.0053469,127.1047786,127.0721269,126.9496358,127.0688931,127.0983249,126.889994,126.8569791,127.1034344,127.1114668,127.1658598,127.0079526,126.8358488,126.8396521,127.1047773,126.9612596,126.9879468,126.9131691,127.0877149,127.0028689,127.1015496,127.0984388,126.9447891,127.079457,126.8391141,127.0583765,126.9138234,126.8444965,126.9057958,126.9437543,127.0470928,127.1396638,126.8215615,126.9512057,127.0171653,127.0523485,127.0495288,127.0296135,127.0004066,126.9895351,126.9867556,127.1139167,127.0141941,127.024108,126.9645735,126.949743,127.0699087,126.9601067,127.0627832,127.0493712,126.8474076,127.0613471,127.062292,126.9338938,127.0259479,127.0697433,126.8537249,127.110752,126.9871924,127.0420698,127.0292259,126.8477618,126.8734243,126.8294216,127.0602136,127.1132696,126.9025892,127.0880021,127.1179898,126.9751016,126.9045185,127.0841901,127.0245296,127.0923309,126.9603445,127.0403478,127.0313774,127.0805624,127.0345745,126.9378894,127.0116361,127.0637099,127.0320573,126.9086512,127.046857,127.0700626,127.0842006,127.0498993,127.0336944,126.9048222,127.0546704,127.0580022,127.0517418,127.0177877,127.1450416,126.939603,127.0393779,127.0456394,127.1000484,126.8947429,126.9194861,127.0482202,127.019009,127.1056184,126.9285468,126.8860083,126.9967878,127.0136937,127.0925891,126.8620354,127.0645741,126.9143432,127.0879251,127.0247292,127.1209698,127.0099567,126.9294822,127.0018595,127.0547828,127.0100328,126.8680558,126.9496417,127.0950142,127.1414986,126.928555,127.0504709,127.0756009,127.013549,127.0634191,126.8821351,127.0356624,127.0935852,127.0292998,126.925733,127.0405915,126.8371342,126.9047454,127.0113002,127.0040536,127.0491834,126.8992804,126.8923219,126.9224885,126.9522691,126.9136647,127.0308441,126.947738,127.0262313,127.0797413,127.1710463,126.8837685,126.826079,126.9050438,127.0143301,127.1460078,126.9181917,127.0547069,126.9880785,126.9488388,127.1448144,127.0583318,126.9745777,126.8339055,127.0423547,127.0740392,126.9501817,127.0701251,126.8480459,127.034673,127.1532897,126.9515446,126.98218,127.0896606,126.962771,126.9310551,126.9439776,127.0471967,126.9022665,126.8422904,127.0849434,127.0632562,127.0138955,127.071815,127.1302223,126.8722223,126.9268512,126.8378331,127.0812564,127.0167512,127.0226321,126.8310383,126.8728673,126.9191401,127.0936526,126.9075898,127.0501659,127.0680751,126.8238445,126.8444876,126.8498341,127.047545,127.0167773,126.8363946,126.8655182,127.0148822,127.1200978,126.924974,126.8601556,126.8823543,127.1772858,127.0277783,126.9702694,127.0711405,127.0226712,126.9010709,127.0535393,126.9113446,127.0807327,127.0614475,127.0193128,127.0407474,127.0142837,126.8263073,126.9339648,126.852547,127.1243019,127.1283576,126.9273104,126.8543083,126.9410107,126.8145715,126.9195884,127.1151401,127.1459128,127.1733624,127.0114325,126.909581,126.9410205,127.0542211,127.0278071,126.9877817,127.0471628,126.9094521,127.0581216,127.0583817,126.9609387,127.0868108,127.0895339,126.9299853,127.0126789,127.0236047,127.1097981,127.0144421,126.9058543,127.0725796,126.914372,126.865676,126.8932886,126.8892874,127.061479,126.9167089,126.9184564,126.9251778,126.9341783,126.9262845,127.1469046,126.9372288,127.1723329,127.0675498,127.0237894,126.9293181,127.1364524,127.1224654,126.8876868,127.0757847,126.9094339,127.0464227,126.844666,127.0744063,127.0733106,126.9667696,126.9123036,126.99827,127.1287926,126.9855602,126.8539776,127.1495915,126.9491081,127.1013357,126.9530768,126.965079,127.083145,126.9692423,126.8583713,127.1299696,126.9350984,126.9565385,127.1420935,126.8617624,127.0235067,127.1806458,126.9434152,127.0432681,127.1533139,127.1331024,126.898215,126.8616964,127.1504189,127.0327077,126.8549719,127.0578888,127.0587469,127.0199193,127.1665805,126.9244269,127.0763669,126.870245,127.0447617,126.9083606,127.1375686,127.0519604,126.911785,127.0643592,127.0318861,126.8962417,127.0910573,126.8239832,126.8414178,126.9214593,127.102087,127.1688868,127.1076425,127.1607703],5,null,null,{"interactive":true,"className":"","stroke":true,"color":"#03F","weight":5,"opacity":0.5,"fill":true,"fillColor":"#03F","fillOpacity":0.2},{"showCoverageOnHover":true,"zoomToBoundsOnClick":true,"spiderfyOnMaxZoom":true,"removeOutsideVisibleBounds":true,"spiderLegPolylineOptions":{"weight":1.5,"color":"#222","opacity":0.5},"freezeAtZoom":false},null,["서울동작초등학교","서울갈산초등학교","서울태랑초등학교","서울한천초등학교","서울양동초등학교","서울신구초등학교","서울봉화초등학교","서울중화초등학교","서울상월초등학교","서울중목초등학교","서울영림초등학교","서울평화초등학교","서울송례초등학교","서울양원초등학교","서울상봉초등학교","서울원광초등학교","서울월계초등학교","서울강남초등학교","서울반포초등학교","서울면동초등학교","서울원촌초등학교","상명대학교사범대학부속초등학교","서울가원초등학교","서울논현초등학교","서울구룡초등학교","서울독립문초등학교","서울공진초등학교","서울영화초등학교","서울신곡초등학교","서울불광초등학교","서울잠실초등학교","서울자곡초등학교","서울명신초등학교","서울서원초등학교","서울신성초등학교","서울신내초등학교","서울중곡초등학교","서울전농초등학교","서울한남초등학교","서울마천초등학교","서울가주초등학교","서울잠일초등학교","서울정곡초등학교","서울대곡초등학교","서울원묵초등학교","서울오륜초등학교","서울개명초등학교","서울신강초등학교","서울가산초등학교","서울오금초등학교","서울안천초등학교","서울장평초등학교","서울미래초등학교","서울월촌초등학교","서울은정초등학교","서울대진초등학교","서울신길초등학교","서울가동초등학교","서울영도초등학교","서울연촌초등학교","서울신방학초등학교","서울신상계초등학교","서울우장초등학교","서울교육대학교부설초등학교","서울개웅초등학교","서울잠전초등학교","서울대학교사범대학부설초등학교","서울염경초등학교","동광초등학교","이화여자대학교사범대학부속초등학교","서울개봉초등학교","서울염리초등학교","서울중계초등학교","서울윤중초등학교","서울방현초등학교","서울중현초등학교","서울금천초등학교","서울강서초등학교","서울용동초등학교","서울중평초등학교","서울자운초등학교","서울신당초등학교","서울면중초등학교","서울원당초등학교","서울송천초등학교","서울난향초등학교","서울송화초등학교","서울창경초등학교","청원초등학교","서울거원초등학교","서울송정초등학교","서울신림초등학교","서울신영초등학교","서울면일초등학교","서울청량초등학교","서울아주초등학교","서울신답초등학교","서울사당초등학교","서울당서초등학교","서울방일초등학교","서울신학초등학교","서울신원초등학교","서울숭신초등학교","서울광진초등학교","서울서정초등학교","서울신천초등학교","서울잠원초등학교","서울도봉초등학교","서울구로남초등학교","서울삼광초등학교","서울신용산초등학교","금성초등학교","서울구암초등학교","서울신서초등학교","서울동일초등학교","서울장수초등학교","서울남천초등학교","서울봉천초등학교","서울면남초등학교","서울영풍초등학교","서울거여초등학교","서울보라매초등학교","서울신계초등학교","서울문정초등학교","서울목동초등학교","서울옥수초등학교","서울문성초등학교","서울광희초등학교","서울온곡초등학교","서울관악초등학교","서울숭미초등학교","서울창림초등학교","서울청계초등학교","서울경인초등학교","은석초등학교","서울신묵초등학교","서울도림초등학교","서울성산초등학교","서울용곡초등학교","서울소의초등학교","서울개화초등학교","서울신도림초등학교","서울수송초등학교","서울옥정초등학교","서울용두초등학교","서울남사초등학교","서울대영초등학교","서울가재울초등학교","서울세곡초등학교","서울세륜초등학교","서울홍제초등학교","서울독산초등학교","서울문덕초등학교","서울봉은초등학교","서울버들초등학교","서울은평초등학교","서울창일초등학교","서울금화초등학교","서울삼정초등학교","서울금옥초등학교","서울삼릉초등학교","서울배봉초등학교","서울도신초등학교","경희초등학교","서울광남초등학교","서울난우초등학교","서울삼육초등학교","서울미성초등학교","서울은천초등학교","서울숭인초등학교","서울양화초등학교","서울봉래초등학교","서울대도초등학교","서울동구로초등학교","서울전곡초등학교","서울양명초등학교","서울신우초등학교","서울난곡초등학교","서울원명초등학교","서울용산초등학교","서울청담초등학교","서울수암초등학교","서울당산초등학교","서울선곡초등학교","서울오류초등학교","서울삼선초등학교","서울덕의초등학교","서울신동초등학교","서울금산초등학교","서울탑동초등학교","서울보광초등학교","서울종암초등학교","서울면북초등학교","서울방이초등학교","서울일신초등학교","서울수색초등학교","서울묵현초등학교","서울금동초등학교","서울율현초등학교","서울수유초등학교","서울화곡초등학교","서울서빙고초등학교","서울대동초등학교","서울을지초등학교","서울답십리초등학교","서울봉현초등학교","서울두산초등학교","성신초등학교","서울가양초등학교","서울신남성초등학교","서울미동초등학교","서울하늘초등학교","서울미아초등학교","서울영동초등학교","서울청파초등학교","서울서신초등학교","서울은진초등학교","서울상계초등학교","서울은로초등학교","서울신중초등학교","서울숭곡초등학교","서울영희초등학교","서울왕북초등학교","홍익대학교사범대학부속초등학교","서울연지초등학교","서울상수초등학교","서울대모초등학교","서울본동초등학교","서울남부초등학교","서울백산초등학교","서울여의도초등학교","서울선유초등학교","서울길원초등학교","서울신미림초등학교","서울이수초등학교","서울탑산초등학교","서울영중초등학교","서울신양초등학교","서울혜화초등학교","서울정덕초등학교","서울천왕초등학교","서울연가초등학교","서울문교초등학교","서울신창초등학교","서울상현초등학교","운현초등학교","서울동원초등학교","은혜초등학교","서울공덕초등학교","서울진관초등학교","리라초등학교","서울서래초등학교","서울남성초등학교","서울성원초등학교","서울오류남초등학교","서울역삼초등학교","서울원효초등학교","서울흑석초등학교","서울중광초등학교","서울성서초등학교","서울묵동초등학교","서울대은초등학교","서울구일초등학교","서울신은초등학교","서울학동초등학교","서울남정초등학교","서울신화초등학교","서울상곡초등학교","서울언주초등학교","서울방화초등학교","서울초당초등학교","서울정릉초등학교","서울잠현초등학교","서울장안초등학교","서울한서초등학교","서울용원초등학교","서울양진초등학교","서울당중초등학교","서울고척초등학교","서울망우초등학교","서울새솔초등학교","서울고현초등학교","서울정수초등학교","서울가곡초등학교","서울양천초등학교","서울석촌초등학교","서울금양초등학교","서울이태원초등학교","선일초등학교","서울면목초등학교","서울효제초등학교","서울수서초등학교","서울동의초등학교","서울인왕초등학교","서울자양초등학교","서울신월초등학교","서울노원초등학교","서울대길초등학교","서울신남초등학교","서울구현초등학교","서울용강초등학교","서울경일초등학교","서울개롱초등학교","서울공항초등학교","서울청룡초등학교","동산초등학교","서울포이초등학교","서울창도초등학교","서울무학초등학교","서울청덕초등학교","서울용암초등학교","서울남산초등학교","서울중대초등학교","서울청구초등학교","서울서초초등학교","서울행림초등학교","서울홍은초등학교","서울석계초등학교","중앙대학교사범대학부속초등학교","서울중원초등학교","서울누원초등학교","서울화일초등학교","서울군자초등학교","서울대치초등학교","서울연희초등학교","서울서이초등학교","서울송원초등학교","유석초등학교","서울송파초등학교","서울방배초등학교","서울매헌초등학교","서울화계초등학교","서울등현초등학교","서울목운초등학교","서울강신초등학교","서울상원초등학교","서울풍성초등학교","서울동교초등학교","서울잠신초등학교","서울풍납초등학교","서울삼일초등학교","서울증산초등학교","서울용마초등학교","서울우암초등학교","서울구남초등학교","서울인헌초등학교","서울오봉초등학교","서울송중초등학교","서울불암초등학교","서울숭례초등학교","서울신석초등학교","서울유현초등학교","서울대현초등학교","서울방학초등학교","서울신흥초등학교","서울오현초등학교","서울양전초등학교","서울중흥초등학교","서울장위초등학교","서울응봉초등학교","서울시흥초등학교","서울도곡초등학교","서울개일초등학교","서울상경초등학교","서울길음초등학교","서울위례별초등학교","서울창천초등학교","서울홍파초등학교","서울언북초등학교","서울잠동초등학교","서울영서초등학교","서울대방초등학교","서울장곡초등학교","매원초등학교","서울대왕초등학교","서울연신초등학교","서울구로초등학교","계성초등학교","서울미양초등학교","서울삼전초등학교","서울백석초등학교","서울동답초등학교","예일초등학교","서울대청초등학교","서울쌍문초등학교","서울방산초등학교","서울인수초등학교","서울연천초등학교","서울충무초등학교","서울노일초등학교","서울동호초등학교","서울염창초등학교","서울마포초등학교","서울송전초등학교","서울한산초등학교","명지초등학교","서울경동초등학교","서울신자초등학교","서울백운초등학교","서울녹천초등학교","서울상지초등학교","서울동명초등학교","서울신현초등학교","서울행현초등학교","서울대림초등학교","서울창원초등학교","서울지향초등학교","서울신북초등학교","서울장충초등학교","서울반원초등학교","서울도성초등학교","서울문백초등학교","서울상암초등학교","충암초등학교","서울북성초등학교","서울문창초등학교","서울압구정초등학교","서울대신초등학교","동북초등학교","서울중마초등학교","서울강빛초등학교","서울영일초등학교","서울온수초등학교","서울상신초등학교","서울삼각산초등학교","서울명덕초등학교","서울영신초등학교","광운초등학교","숭의초등학교","서울영본초등학교","서울길동초등학교","서울경수초등학교","서울덕수초등학교","서울강월초등학교","서울마장초등학교","서울공릉초등학교","서울북한산초등학교","서울휘봉초등학교","서울양강초등학교","서울행당초등학교","서울대명초등학교","서울안산초등학교","서울후암초등학교","서울양남초등학교","경기초등학교","서울홍연초등학교","서울신상도초등학교","서울홍릉초등학교","서울영원초등학교","서울등명초등학교","서울태릉초등학교","서울성수초등학교","서울숭덕초등학교","서울안평초등학교","서울문현초등학교","서울염동초등학교","서울서강초등학교","서울내발산초등학교","서울덕암초등학교","서울동신초등학교","서울서일초등학교","서울발산초등학교","서울신목초등학교","서울은빛초등학교","화랑초등학교","서울북가좌초등학교","한양초등학교","서울계상초등학교","서울수명초등학교","서울매봉초등학교","서울등원초등학교","서울사근초등학교","서울삼양초등학교","서울월정초등학교","서울고산초등학교","서울우이초등학교","서울신가초등학교","서울서교초등학교","서울계남초등학교","서울목원초등학교","서울강일초등학교","서울개운초등학교","신광초등학교","서울화양초등학교","서울안암초등학교","서울망원초등학교","서울용답초등학교","서울중동초등학교","서울구의초등학교","서울언남초등학교","서울우솔초등학교","서울번동초등학교","서울창신초등학교","서울오정초등학교","서울창서초등학교","서울신정초등학교","서울신암초등학교","서울성일초등학교","서울원신초등학교","서울신기초등학교","서울노량진초등학교","서울치현초등학교","서울대조초등학교","서울토성초등학교","서울선린초등학교","서울강명초등학교","우촌초등학교","서울조원초등학교","서울삼성초등학교","서울수락초등학교","영훈초등학교","서울교동초등학교","서울장월초등학교","서울구산초등학교","서울휘경초등학교","서울당현초등학교","서울세검정초등학교","경복초등학교","성동초등학교","서울당곡초등학교","서울돈암초등학교","대광초등학교","태강삼육초등학교","서울흥인초등학교","서울신대림초등학교","서울동자초등학교","서울역촌초등학교","서울고원초등학교","서울문래초등학교","서울신구로초등학교","서울전동초등학교","서울갈현초등학교","서울은명초등학교","서울연은초등학교","서울수리초등학교","서울녹번초등학교","서울고명초등학교","서울상도초등학교","서울상일초등학교","상명초등학교","서울우면초등학교","서울신도초등학교","서울천호초등학교","서울성내초등학교","서울영문초등학교","서울중랑초등학교","서울영남초등학교","서울월곡초등학교","서울등양초등학교","서울공연초등학교","세종초등학교","서울매동초등학교","서울신사초등학교","서울성북초등학교","서울선사초등학교","서울재동초등학교","서울남명초등학교","서울신명초등학교","서울신봉초등학교","서울광장초등학교","추계초등학교","서울한강초등학교","서울성자초등학교","서울청운초등학교","서울등촌초등학교","서울강동초등학교","서울어울초등학교","서울아현초등학교","서울명일초등학교","서울등마초등학교","서울금북초등학교","서울강솔초등학교","서울고은초등학교","서울가인초등학교","서울묘곡초등학교","서울천일초등학교","서울영등포초등학교","서울양목초등학교","서울명원초등학교","한신초등학교","서울등서초등학교","서울상천초등학교","서울석관초등학교","서울금호초등학교","서울고덕초등학교","서울연광초등학교","서울일원초등학교","서울정목초등학교","서울창동초등학교","서울정심초등학교","서울천동초등학교","서울월천초등학교","서울우신초등학교","서울이문초등학교","서울양재초등학교","서울금나래초등학교","서울세명초등학교","서울항동초등학교","서울하늘숲초등학교","서울응암초등학교","서울해누리초등학교","서울고일초등학교","서울가락초등학교","서울강덕초등학교"],null,null,{"interactive":false,"permanent":false,"direction":"auto","opacity":1,"offset":[0,0],"textsize":"10px","textOnly":false,"className":"","sticky":true},null]}],"limits":{"lat":[37.44164885,37.68669133],"lng":[126.8045332,127.1806458]}},"evals":[],"jsHooks":[]}</script>
+</div>
+</div>
+</section>
+<section id="preview-links-and-편리한-zoom-기능" class="slide level2">
+<h2>Preview Links and 편리한 Zoom 기능</h2>
+<ul>
+<li><p>Navigate to hyperlinks without disrupting the flow of your presentation.</p>
+<ul>
+<li>Use the <code>preview-links</code> option to open links in an iframe on top of your slides.</li>
+</ul></li>
+</ul>
+<div style="text-align: center; margin-top: 0.25em">
+<p><a href="http://bit2edu.ddns.net/" data-preview-link="true" style="text-align: center">Bit-Edu</a></p>
+</div>
+<ul>
+<li>윈도우의 돋보기 기능이나 ZoomIt 같은 프로그램을 사용하지 않더라도 화면의 특정 부분을 쉽게 확대할 수 있음</li>
+</ul>
+<div style="text-align: center; margin-top: 0.25em">
+<p><strong>Alt + Click</strong></p>
+</div>
+</section>
+<section id="칠판-및-판서-기능" class="slide level2" data-chalkboard-buttons="true">
+<h2>칠판 및 판서 기능</h2>
+<div class="quarto-layout-panel">
+<div class="quarto-layout-row quarto-layout-valign-top">
+<div class="quarto-layout-cell" style="flex-basis: 4.8%;justify-content: center;">
+<p><img data-src="images/presentation-chalkboard.png" width="41"></p>
+</div>
+<div class="quarto-layout-cell" style="flex-basis: 95.2%;justify-content: center;">
+<p>Use the chalkboard button at the bottom left of the slide to toggle the chalkboard.</p>
+</div>
+</div>
+</div>
+<div class="quarto-layout-panel">
+<div class="quarto-layout-row quarto-layout-valign-top">
+<div class="quarto-layout-cell" style="flex-basis: 4.8%;justify-content: center;">
+<p><img data-src="images/presentation-notes-canvas.png" width="41"></p>
+</div>
+<div class="quarto-layout-cell" style="flex-basis: 95.2%;justify-content: center;">
+<p>Use the notes canvas button at the bottom left of the slide to toggle drawing on top of the current slide.</p>
+</div>
+</div>
+</div>
+<p>You can also press <code>b</code> to toggle the chalkboard or <code>c</code> to toggle the notes canvas.</p>
+<div class="footer footer-default">
+
+</div>
+</section></section>
+    </div>
+  </div>
+
+  <script>window.backupDefine = window.define; window.define = undefined;</script>
+  <script src="Quarto_Slide_files/libs/revealjs/dist/reveal.js"></script>
+  <!-- reveal.js plugins -->
+  <script src="Quarto_Slide_files/libs/revealjs/plugin/quarto-line-highlight/line-highlight.js"></script>
+  <script src="Quarto_Slide_files/libs/revealjs/plugin/pdf-export/pdfexport.js"></script>
+  <script src="Quarto_Slide_files/libs/revealjs/plugin/reveal-menu/menu.js"></script>
+  <script src="Quarto_Slide_files/libs/revealjs/plugin/reveal-menu/quarto-menu.js"></script>
+  <script src="Quarto_Slide_files/libs/revealjs/plugin/reveal-chalkboard/plugin.js"></script>
+  <script src="Quarto_Slide_files/libs/revealjs/plugin/quarto-support/support.js"></script>
+  
+
+  <script src="Quarto_Slide_files/libs/revealjs/plugin/notes/notes.js"></script>
+  <script src="Quarto_Slide_files/libs/revealjs/plugin/search/search.js"></script>
+  <script src="Quarto_Slide_files/libs/revealjs/plugin/zoom/zoom.js"></script>
+  <script src="Quarto_Slide_files/libs/revealjs/plugin/math/math.js"></script>
+  <script>window.define = window.backupDefine; window.backupDefine = undefined;</script>
+
+  <script>
+
+      // Full list of configuration options available at:
+      // https://revealjs.com/config/
+      Reveal.initialize({
+'controlsAuto': true,
+'previewLinksAuto': true,
+'smaller': false,
+'pdfSeparateFragments': false,
+'autoAnimateEasing': "ease",
+'autoAnimateDuration': 1,
+'autoAnimateUnmatched': true,
+'menu': {"side":"left","useTextContentForMissingTitles":true,"markers":false,"loadIcons":false,"custom":[{"title":"Tools","icon":"<i class=\"fas fa-gear\"></i>","content":"<ul class=\"slide-menu-items\">\n<li class=\"slide-tool-item active\" data-item=\"0\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.fullscreen(event)\"><kbd>f</kbd> Fullscreen</a></li>\n<li class=\"slide-tool-item\" data-item=\"1\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.speakerMode(event)\"><kbd>s</kbd> Speaker View</a></li>\n<li class=\"slide-tool-item\" data-item=\"2\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.overview(event)\"><kbd>o</kbd> Slide Overview</a></li>\n<li class=\"slide-tool-item\" data-item=\"3\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.overview(event)\"><kbd>e</kbd> PDF Export Mode</a></li>\n<li class=\"slide-tool-item\" data-item=\"4\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.toggleChalkboard(event)\"><kbd>b</kbd> Toggle Chalkboard</a></li>\n<li class=\"slide-tool-item\" data-item=\"5\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.toggleNotesCanvas(event)\"><kbd>c</kbd> Toggle Notes Canvas</a></li>\n<li class=\"slide-tool-item\" data-item=\"6\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.downloadDrawings(event)\"><kbd>d</kbd> Download Drawings</a></li>\n<li class=\"slide-tool-item\" data-item=\"7\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.keyboardHelp(event)\"><kbd>?</kbd> Keyboard Help</a></li>\n</ul>"}],"openButton":true},
+'chalkboard': {"buttons":false},
+'smaller': false,
+ 
+        // Display controls in the bottom right corner
+        controls: false,
+
+        // Help the user learn the controls by providing hints, for example by
+        // bouncing the down arrow when they first encounter a vertical slide
+        controlsTutorial: false,
+
+        // Determines where controls appear, "edges" or "bottom-right"
+        controlsLayout: 'edges',
+
+        // Visibility rule for backwards navigation arrows; "faded", "hidden"
+        // or "visible"
+        controlsBackArrows: 'faded',
+
+        // Display a presentation progress bar
+        progress: true,
+
+        // Display the page number of the current slide
+        slideNumber: 'c/t',
+
+        // 'all', 'print', or 'speaker'
+        showSlideNumber: 'all',
+
+        // Add the current slide number to the URL hash so that reloading the
+        // page/copying the URL will return you to the same slide
+        hash: true,
+
+        // Start with 1 for the hash rather than 0
+        hashOneBasedIndex: false,
+
+        // Flags if we should monitor the hash and change slides accordingly
+        respondToHashChanges: true,
+
+        // Push each slide change to the browser history
+        history: true,
+
+        // Enable keyboard shortcuts for navigation
+        keyboard: true,
+
+        // Enable the slide overview mode
+        overview: true,
+
+        // Disables the default reveal.js slide layout (scaling and centering)
+        // so that you can use custom CSS layout
+        disableLayout: false,
+
+        // Vertical centering of slides
+        center: false,
+
+        // Enables touch navigation on devices with touch input
+        touch: true,
+
+        // Loop the presentation
+        loop: false,
+
+        // Change the presentation direction to be RTL
+        rtl: false,
+
+        // see https://revealjs.com/vertical-slides/#navigation-mode
+        navigationMode: 'linear',
+
+        // Randomizes the order of slides each time the presentation loads
+        shuffle: false,
+
+        // Turns fragments on and off globally
+        fragments: true,
+
+        // Flags whether to include the current fragment in the URL,
+        // so that reloading brings you to the same fragment position
+        fragmentInURL: false,
+
+        // Flags if the presentation is running in an embedded mode,
+        // i.e. contained within a limited portion of the screen
+        embedded: false,
+
+        // Flags if we should show a help overlay when the questionmark
+        // key is pressed
+        help: true,
+
+        // Flags if it should be possible to pause the presentation (blackout)
+        pause: true,
+
+        // Flags if speaker notes should be visible to all viewers
+        showNotes: false,
+
+        // Global override for autoplaying embedded media (null/true/false)
+        autoPlayMedia: null,
+
+        // Global override for preloading lazy-loaded iframes (null/true/false)
+        preloadIframes: null,
+
+        // Number of milliseconds between automatically proceeding to the
+        // next slide, disabled when set to 0, this value can be overwritten
+        // by using a data-autoslide attribute on your slides
+        autoSlide: 0,
+
+        // Stop auto-sliding after user input
+        autoSlideStoppable: true,
+
+        // Use this method for navigation when auto-sliding
+        autoSlideMethod: null,
+
+        // Specify the average time in seconds that you think you will spend
+        // presenting each slide. This is used to show a pacing timer in the
+        // speaker view
+        defaultTiming: null,
+
+        // Enable slide navigation via mouse wheel
+        mouseWheel: false,
+
+        // The display mode that will be used to show slides
+        display: 'block',
+
+        // Hide cursor if inactive
+        hideInactiveCursor: true,
+
+        // Time before the cursor is hidden (in ms)
+        hideCursorTime: 5000,
+
+        // Opens links in an iframe preview overlay
+        previewLinks: false,
+
+        // Transition style (none/fade/slide/convex/concave/zoom)
+        transition: 'none',
+
+        // Transition speed (default/fast/slow)
+        transitionSpeed: 'default',
+
+        // Transition style for full page slide backgrounds
+        // (none/fade/slide/convex/concave/zoom)
+        backgroundTransition: 'none',
+
+        // Number of slides away from the current that are visible
+        viewDistance: 3,
+
+        // Number of slides away from the current that are visible on mobile
+        // devices. It is advisable to set this to a lower number than
+        // viewDistance in order to save resources.
+        mobileViewDistance: 2,
+
+        // The "normal" size of the presentation, aspect ratio will be preserved
+        // when the presentation is scaled to fit different resolutions. Can be
+        // specified using percentage units.
+        width: 1050,
+
+        height: 700,
+
+        // Factor of the display size that should remain empty around the content
+        margin: 0.1,
+
+        math: {
+          mathjax: 'https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js',
+          config: 'TeX-AMS_HTML-full',
+          tex2jax: {
+            inlineMath: [['\\(','\\)']],
+            displayMath: [['\\[','\\]']],
+            balanceBraces: true,
+            processEscapes: false,
+            processRefs: true,
+            processEnvironments: true,
+            preview: 'TeX',
+            skipTags: ['script','noscript','style','textarea','pre','code'],
+            ignoreClass: 'tex2jax_ignore',
+            processClass: 'tex2jax_process'
+          },
+        },
+
+        // reveal.js plugins
+        plugins: [QuartoLineHighlight, PdfExport, RevealMenu, RevealChalkboard, QuartoSupport,
+
+          RevealMath,
+          RevealNotes,
+          RevealSearch,
+          RevealZoom
+        ]
+      });
+    </script>
+    
+    <script>
+      // htmlwidgets need to know to resize themselves when slides are shown/hidden.
+      // Fire the "slideenter" event (handled by htmlwidgets.js) when the current
+      // slide changes (different for each slide format).
+      (function () {
+        function fireSlideChanged(previousSlide, currentSlide) {
+
+          // dispatch for htmlwidgets
+          const event = window.document.createEvent("Event");
+          event.initEvent("slideenter", true, true);
+          window.document.dispatchEvent(event);
+
+          // dispatch for shiny
+          if (window.jQuery) {
+            if (previousSlide) {
+              window.jQuery(previousSlide).trigger("hidden");
+            }
+            if (currentSlide) {
+              window.jQuery(currentSlide).trigger("shown");
+            }
+          }
+        }
+
+        // hookup for reveal
+        if (window.Reveal) {
+          window.Reveal.addEventListener("slidechanged", function(event) {
+            fireSlideChanged(event.previousSlide, event.currentSlide);
+          });
+        }
+
+        // hookup for slidy
+        if (window.w3c_slidy) {
+          window.w3c_slidy.add_observer(function (slide_num) {
+            // slide_num starts at position 1
+            fireSlideChanged(null, w3c_slidy.slides[slide_num - 1]);
+          });
+        }
+
+      })();
+    </script>
+
+    <script id="quarto-html-after-body" type="application/javascript">
+    window.document.addEventListener("DOMContentLoaded", function (event) {
+      const toggleBodyColorMode = (bsSheetEl) => {
+        const mode = bsSheetEl.getAttribute("data-mode");
+        const bodyEl = window.document.querySelector("body");
+        if (mode === "dark") {
+          bodyEl.classList.add("quarto-dark");
+          bodyEl.classList.remove("quarto-light");
+        } else {
+          bodyEl.classList.add("quarto-light");
+          bodyEl.classList.remove("quarto-dark");
+        }
+      }
+      const toggleBodyColorPrimary = () => {
+        const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+        if (bsSheetEl) {
+          toggleBodyColorMode(bsSheetEl);
+        }
+      }
+      toggleBodyColorPrimary();  
+      const tabsets =  window.document.querySelectorAll(".panel-tabset-tabby")
+      tabsets.forEach(function(tabset) {
+        const tabby = new Tabby('#' + tabset.id);
+      });
+      const clipboard = new window.ClipboardJS('.code-copy-button', {
+        target: function(trigger) {
+          return trigger.previousElementSibling;
+        }
+      });
+      clipboard.on('success', function(e) {
+        // button target
+        const button = e.trigger;
+        // don't keep focus
+        button.blur();
+        // flash "checked"
+        button.classList.add('code-copy-button-checked');
+        var currentTitle = button.getAttribute("title");
+        button.setAttribute("title", "Copied!");
+        setTimeout(function() {
+          button.setAttribute("title", currentTitle);
+          button.classList.remove('code-copy-button-checked');
+        }, 1000);
+        // clear code selection
+        e.clearSelection();
+      });
+      function tippyHover(el, contentFn) {
+        const config = {
+          allowHTML: true,
+          content: contentFn,
+          maxWidth: 500,
+          delay: 100,
+          arrow: false,
+          appendTo: function(el) {
+              return el.closest('section.slide') || el.parentElement;
+          },
+          interactive: true,
+          interactiveBorder: 10,
+          theme: 'quarto-reveal',
+          placement: 'bottom-start'
+        };
+          config['offset'] = [0,0];
+          config['maxWidth'] = 700;
+        window.tippy(el, config); 
+      }
+      const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+      for (var i=0; i<noterefs.length; i++) {
+        const ref = noterefs[i];
+        tippyHover(ref, function() {
+          let href = ref.getAttribute('href');
+          try { href = new URL(href).hash; } catch {}
+          const id = href.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          return note.innerHTML;
+        });
+      }
+      var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+      for (var i=0; i<bibliorefs.length; i++) {
+        const ref = bibliorefs[i];
+        const cites = ref.parentNode.getAttribute('data-cites').split(' ');
+        tippyHover(ref, function() {
+          var popup = window.document.createElement('div');
+          cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    });
+    </script>
+    
+
+</body></html>

@@ -1,0 +1,337 @@
+---
+title: "Reproducible Research & Intereactive Presentation"
+# subtitle: "재현가능한 연구의 중요성과 Quarto로 만든 Slide의 매력"
+date: "11/26/2022"
+# date: "`r Sys.Date()`"
+author: 
+  - name: 연습용
+    email: jaesungc.econ@gmail.com
+affiliations:
+  - name: 성균관대학교 경제학과
+format:
+  revealjs: 
+    slide-number: true
+    chalkboard: 
+      buttons: false
+    preview-links: auto
+    css: styles.css
+resources:
+  - Slide for Public.pdf
+---
+
+# 사회과학 연구와 재현 가능성
+
+## 학술 저널
+
+-   경제학 최상위 저널은 논문 게재 조건으로 데이터와 코드를 함께 제출할 것을 요구
+
+    -   **American Economics Review** 
+
+        -   [Data and Code Availability Policy](https://www.aeaweb.org/journals/data/data-code-policy)\
+            ![](images/paste-9BC4E139.png)
+
+    -   데이터를 공개하기 어려운 경우(행정데이터, 기업내부데이터)는 예외 적용이 되지만, 그래도 코드는 반드시 제출
+
+
+## 학술 저널
+
+-   Archive 역할을 하는 공간의 역할 확대
+
+    -   Data and programs should be archived in the AEA Data and Code Repository: [OPEN ICPSR for AEA](https://www.openicpsr.org/openicpsr/search/aea/studies)
+
+-   **Quarterly Journal of Economic**는 **Harvard Dataverse** 활용
+
+    -   [Exley, C. L., & Kessler, J. B. (2022). The Gender Gap in Self-Promotion](https://doi.org/10.1093/QJE/QJAC003): [Replication Data at Harvard Dataverse](https://dataverse.harvard.edu/dataset.xhtml?persistentId=doi:10.7910/DVN/YSWKHY)\
+        ![](images/paste-635CF3B9.png){width="600"}
+
+## 연구자 커뮤니티
+
+저널에서 요구하지 않더라도 연구자 스스로 데이터와 코드를 공개하는 움직임 확대
+
+-   [Raj Chetty](https://rajchetty.com/) 연구 사례
+      - [Opportunity Insights](https://opportunityinsights.org/)
+        - [Social Capital I: Measurement and Associations with Economic Mobility](https://opportunityinsights.org/paper/social-capital-i-measurement-and-associations-with-economic-mobility/)
+
+-   Github를 통한 공유
+      -   [김재연 교수님](https://jaeyk.github.io/)
+
+
+## Randomized Experiment
+
+-   무작위 실험(Randomized Experiment)을 하는 경우 사전에 연구계획서(pre-analysis plan)를 공개된 웹사이트 등록하도록 권장장
+
+    -   "The information required for pre-registration typically includes the country and title, a brief description of the project, the timeline, outcomes to measure, sample size, study design, and ethical approval details."
+    -   실험 설계, 가설, 분석 방법
+    -   [AEA RCT Registry](https://www.socialscienceregistry.org/)
+
+
+
+# 대학 현장에서의 경험과 고민
+
+## 대학 내 변화
+
+-   데이터 분석에 대한 수요가 급성장하며 대학 현장도 빠르게 변화하고 있고 더 변화해야 함
+-   평가의 공정성을 담보할 수 있고 지속 가능한 시험 방식에 대한 고민(오픈북, 학생수, 채점)
+
+::: {layout-ncol="2"}
+![](images/paste-3A909A1D.png)
+
+![](images/paste-312FEDF0.png)
+:::
+
+
+## 데이터 분석 관련 수업 수요 증가
+
+-   데이터 분석 관련 수업의 확대
+    -   경제학 AI 마이크로디그리 프로그램
+
+::: incremental
+-   학부생, 전일제 대학원생, 직장인 대학원생(금융권 50%) 대상 강의
+    -   Stata - 데이터 전처리 및 경제학 주요 모델 분석
+    -   R - 데이터 수집, 텍스트데이터 처리, GIS 분석 등
+    -   QGIS - 지역 기반 통계 정보 데이터 증가
+    -   Python - 직장인 수요 반영
+:::
+
+
+## 수업 사례
+
+-   학생 프로그래밍 관련 발표(전일제 대상 2022년 2학기)
+    -   Quarto for Blog and Website
+    -   Shiny
+    -   Random Forest, 문서 요약
+    -   인공위성 야간조도(nighttime light) 데이터 분석
+
+::: incremental
+-   기말 과제 사례(퀀트응용경제학과 2022년 1학기)
+    -   [Shiny Dashboard 사례1](https://slackquant.shinyapps.io/eda_2022s_project/), [Shiny Dashboard 사례2](https://bororia.shinyapps.io/YBSMacroDB/)
+    -   [FlexDashboard 사례1](https://skkulabor.github.io/QAE_Dashboard_Draft%20(3).html), [FlexDashboard 사례2](https://skkulabor.github.io/QAE_Dashboard_Draft%20(9).html)
+:::
+
+
+
+# Quarto Slide for Academic Use
+
+## Quarto 슬라이드의 장점
+
+-   Quarto를 이용한 HTML 슬라이드는 학계에서 활용 가능한 매력적인 툴 - **Interaction** 
+-   깔끔하고 정돈된 슬라이드를 (능숙해지면) 빠르게 제작
+-   PPT에 코드를 수록하더라도 특수문자, 공백, 줄바꿈 등의 이유로 복사해서 붙여넣어도 에러가 발생하는 경우가 있음
+
+::: incremental
+-   **Visual Editor**의 도입 & **캡쳐 이미지** 붙여넣기 기능 추가
+-   다양한 문서 유형으로 쉽게 변환 가능(슬라이드, 강의노트)
+-   Slide는 HTML, PDF 뿐만 아니라 **PPT** 지원
+-   PPT에서 수작업으로 하는 **애니메이션 기능**을 피할 수 있음
+:::
+
+
+## Quarto 슬라이드의 유용한 기능
+
+아래 링크를 통해 소개된 슬라이드와 관련 코드를 활용하였음
+
+-   [Quarto - Presentations](https://quarto.org/docs/presentations/)
+-   [Quarto - Gallery - Presentations](https://quarto.org/docs/gallery/#presentations)
+    -   [qmd source file at GitHub](https://github.com/quarto-dev/quarto-web/blob/main/docs/presentations/revealjs/demo/index.qmd)
+
+
+## Tabsets 샘플 in Quarto Demo {.smaller .scrollable}
+
+::: panel-tabset
+### Plot
+
+```{r}
+library(ggplot2)
+ggplot(mtcars, aes(hp, mpg, color = am)) +
+  geom_point() +
+  geom_smooth(formula = y ~ x, method = "loess")
+```
+
+### Data
+
+```{r}
+knitr::kable(mtcars)
+```
+:::
+
+## Tabsets 활용 사례 생각해보기 {.smaller .scrollable}
+
+::: panel-tabset
+### 문제
+
+[법률저널 로스쿨 섹션](http://www.lec.co.kr/news/articleList.html?sc_section_code=S1N2&view_type=sm)에 올라온 최근 기사 200개(1\~10페이지)를 대상으로
+
+{기사 제목, 기사 게시 시점, 도입부, 기사 링크, 기자이름, 게재시점}을 아래와 같이 수집하세요.
+
+![](images/paste-7ED6C90F.png)
+
+### 코드
+
+```{r}
+#| eval: false
+#| echo: true
+  URL <- "http://www.lec.co.kr/news/articleList.html?page=1&total=7220&box_idxno=&sc_section_code=S1N2&view_type=sm"
+
+  res <- read_html(URL)
+  
+  pattern <- ".list-titles strong"
+  title <- res %>% 
+    html_nodes(pattern) %>% 
+    html_text()
+  
+  pattern <- ".list-titles a"
+  link <- res %>% 
+    html_nodes(pattern) %>% 
+    html_attr("href") %>% 
+    head(20) %>% 
+    str_c("http://www.lec.co.kr", .)
+```
+:::
+
+
+
+## 세대별 사회이동성 인식 (plotly)
+
+인터랙티브 시각화를 활용하면 전달력을 높일 수 있음
+
+```{r}
+#| echo: false
+#| fig-height: 5
+library(ggplot2)
+library(plotly)
+
+Data<-read.csv("by_cohort_0131.csv")
+Data$cohort<-as.character(Data$cohort)
+
+a <- list(
+  title = "Year",
+  showticklabels = TRUE,
+  autotick = FALSE,
+  ticks = "outside",
+  tick0 = 2009,
+  dtick = 2,
+  ticklen = 5,
+  tickwidth = 2,
+  tickcolor = toRGB("blue")
+)
+
+b <- list(
+  title = "Proportion",
+  showticklabels = TRUE,
+  autotick = FALSE,
+  ticks = "outside",
+  tick0 = 0,
+  dtick = 0.05,
+  ticklen = 5,
+  tickwidth = 2,
+  tickcolor = toRGB("blue"),
+  range=c(0,0.7)
+)
+
+fig <- plot_ly(Data, x=~year, y=~d_sm_child_high, color=~cohort, mode='lines+markers', type='scatter') %>% 
+  layout(xaxis = a, yaxis = b, showlegend = TRUE, title="SMP: Next Generation")
+
+fig
+```
+
+
+
+## 로스쿨 출신 법조인
+
+흐름을 인터랙티브하게 잘 보여줄 수 있는 Sankey Diagram
+
+```{r}
+#| echo: false
+#| fig-height: 5
+# Library
+library(networkD3)
+library(dplyr)
+library(htmlwidgets)
+
+# 변시 합격자
+links <- read.csv("sankey_변시.csv")
+
+nodes <- data.frame(
+  name=c(as.character(links$source), 
+         as.character(links$target)) %>% unique()
+)
+
+links$IDsource <- match(links$source, nodes$name)-1 
+links$IDtarget <- match(links$target, nodes$name)-1
+
+# Make the Network
+p <- sankeyNetwork(Links = links, Nodes = nodes,
+                   Source = "IDsource", Target = "IDtarget",
+                   Value = "value", NodeID = "name",
+                   fontSize = 15, 
+                   sinksRight=FALSE)
+p
+```
+
+
+
+
+## Leaflet 사례 - 서울초등학교
+
+초등학교 위경도 정보는 [학구도안내서비스](https://schoolzone.emac.kr/publicData/publicDataList.do)에서 초중교 학교 위치 파일을 내려받아서 사용
+
+```{r}
+#| echo: false
+#| fig-height: 5
+library(leaflet)
+library(dplyr)
+library(readr)
+
+D <- read_csv("한국교원대학교_초중등학교위치_20210325_UTF8.csv")
+D1 <- D %>% filter(학교급구분=="초등학교" & 시도교육청명=="서울특별시교육청")
+
+D2 <- D1 %>% 
+  rename(y=위도) %>% 
+  rename(x=경도) %>% 
+  rename(name=학교명) %>% 
+  select(name, y, x)
+
+leaflet() %>% 
+  addTiles() %>% 
+  addCircleMarkers(lng = D2$x,
+                   lat = D2$y,
+                   radius = 5,
+                   popup = D2$name,
+                   clusterOptions = markerClusterOptions())
+```
+
+
+
+
+## Preview Links and 편리한 Zoom 기능
+
+-   Navigate to hyperlinks without disrupting the flow of your presentation.
+
+    -   Use the `preview-links` option to open links in an iframe on top of your slides.
+
+::: {style="text-align: center; margin-top: 0.25em"}
+[Bit-Edu](http://bit2edu.ddns.net/){preview-link="true" style="text-align: center"}
+:::
+
+-   윈도우의 돋보기 기능이나 ZoomIt 같은 프로그램을 사용하지 않더라도 화면의 특정 부분을 쉽게 확대할 수 있음
+
+::: {style="text-align: center; margin-top: 0.25em"}
+**Alt + Click**
+:::
+
+
+## 칠판 및 판서 기능 {chalkboard-buttons="true"}
+
+::: {layout="[1, 20]"}
+![](images/presentation-chalkboard.png){width="41"}
+
+Use the chalkboard button at the bottom left of the slide to toggle the chalkboard.
+:::
+
+::: {layout="[1, 20]"}
+![](images/presentation-notes-canvas.png){width="41"}
+
+Use the notes canvas button at the bottom left of the slide to toggle drawing on top of the current slide.
+:::
+
+You can also press `b` to toggle the chalkboard or `c` to toggle the notes canvas.
